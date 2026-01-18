@@ -4,8 +4,8 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbopack",
+		"build:serve": "next build && npx serve out",
 		"build": "next build",
-		"build:gh": "NEXT_PUBLIC_BASE_PATH=/web-portfolio-enzo-coratella next build",
 		"start": "next start",
 		"lint": "next lint"
 	},
