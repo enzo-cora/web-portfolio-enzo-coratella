@@ -40,44 +40,44 @@ export default function ContactForm() {
 	};
 
 	return (
-		<form className="space-y-4" onSubmit={handleSubmit}>
+		<form className="space-y-6" onSubmit={handleSubmit}>
 			<div>
-				<label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+				<label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
 					Name
 				</label>
 				<input
 					type="text"
 					id="name"
 					required
-					className="w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+					className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-blue-500 dark:focus:border-blue-400 outline-none transition-colors"
 					value={formData.name}
 					onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
 				/>
 			</div>
 
 			<div>
-				<label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+				<label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
 					Email
 				</label>
 				<input
 					type="email"
 					id="email"
 					required
-					className="w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+					className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-blue-500 dark:focus:border-blue-400 outline-none transition-colors"
 					value={formData.email}
 					onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
 				/>
 			</div>
 
 			<div>
-				<label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+				<label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
 					Message
 				</label>
 				<textarea
 					id="message"
 					required
-					rows={3}
-					className="w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors resize-none"
+					rows={4}
+					className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-blue-500 dark:focus:border-blue-400 outline-none transition-colors resize-none"
 					value={formData.message}
 					onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
 				/>
@@ -86,14 +86,14 @@ export default function ContactForm() {
 			<button
 				type="submit"
 				disabled={status === 'loading'}
-				className="w-full px-4 py-2 text-white font-semibold bg-blue-600 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+				className="w-full px-6 py-3 text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
 			>
 				{status === 'loading' ? 'Sending...' : 'Send Message'}
 			</button>
 
-			{status === 'success' && <p className="text-sm text-green-600 dark:text-green-500 text-center">Message sent successfully!</p>}
+			{status === 'success' && <p className="text-green-600 dark:text-green-400 text-center">Message sent successfully!</p>}
 
-			{status === 'error' && <p className="text-sm text-red-600 dark:text-red-500 text-center">{errorMessage}</p>}
+			{status === 'error' && <p className="text-red-600 dark:text-red-400 text-center">{errorMessage}</p>}
 		</form>
 	);
 }

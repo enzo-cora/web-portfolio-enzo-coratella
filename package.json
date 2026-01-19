@@ -1,11 +1,11 @@
 {
-	"name": "simple-portfolio-template",
+	"name": "fullstack-portfolio-template",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbopack",
-		"build:serve": "next build && npx serve out",
 		"build": "next build",
+		"build:serve": "next build && npx serve out",
 		"start": "next start",
 		"lint": "next lint"
 	},

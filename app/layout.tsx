@@ -15,31 +15,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: '[Your Name] - Developer',
+	title: '[Your Name] - Full-Stack Developer',
 	description:
-		'Welcome to my portfolio! I am a passionate developer who believes in simplicity and effectiveness. I focus on creating straightforward solutions that solve real problems, with clean code and intuitive user experiences.',
+		'Welcome to my portfolio! I am a passionate full-stack developer who bridges the gap between frontend and backend development. Specializing in creating complete web solutions, from beautiful user interfaces to robust server architectures.',
 	keywords: [
-		'Software Developer',
-		'Web Developer',
-		'Clean Code',
-		'Simple Design',
-		'JavaScript',
-		'TypeScript',
-		'React',
-		'Next.js',
-		'User Experience',
-		'Problem Solving',
-		'Effective Solutions',
-		'Web Development',
+		'Full-Stack Developer',
+		'Software Engineer',
 		'Frontend Development',
 		'Backend Development',
+		'React',
+		'Next.js',
+		'Node.js',
+		'TypeScript',
+		'Database Design',
+		'API Development',
+		'Cloud Solutions',
+		'DevOps',
+		'System Architecture',
+		'Web Development',
 		'[Your Name]',
 	],
 	authors: [{ name: '[Your Name]' }],
 	creator: '[Your Name]',
 	openGraph: {
-		title: '[Your Name] - Developer Portfolio',
-		description: 'Passionate developer creating simple and effective solutions. Explore my projects and development approach.',
+		title: '[Your Name] - Full-Stack Developer Portfolio',
+		description:
+			'Passionate full-stack developer creating complete web solutions. Explore my projects and technical expertise across the entire development stack.',
 		url: 'https://your-domain.com',
 		siteName: '[Your Name] - Portfolio',
 		images: [
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
 				url: '/og-image.jpg',
 				width: 1200,
 				height: 630,
-				alt: '[Your Name] - Developer Portfolio',
+				alt: '[Your Name] - Full-Stack Developer Portfolio',
 			},
 		],
 		locale: 'en_US',
@@ -55,8 +56,9 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: '[Your Name] - Developer',
-		description: 'Passionate developer creating simple and effective solutions. Explore my projects and development approach.',
+		title: '[Your Name] - Full-Stack Developer',
+		description:
+			'Passionate full-stack developer creating complete web solutions. Explore my projects and technical expertise across the entire development stack.',
 		creator: '@yourusername',
 		images: ['/og-image.jpg'],
 	},
@@ -82,8 +84,10 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
 				<ThemeProvider>
-					<div>{children}</div>
-					<Analytics />
+					<div>
+						{children}
+						<Analytics />
+					</div>
 				</ThemeProvider>
 			</body>
 		</html>
