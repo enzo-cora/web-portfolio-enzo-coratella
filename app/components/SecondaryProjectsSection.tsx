@@ -66,7 +66,7 @@ export function SecondaryProjectsSection() {
 	const [itemsPerSlide, setItemsPerSlide] = useState(4);
 
 	useEffect(() => {
-		const mq = window.matchMedia('(min-width: 640px)');
+		const mq = window.matchMedia('(min-width: 850px)');
 		const update = () => setItemsPerSlide(mq.matches ? 4 : 1);
 		update();
 		mq.addEventListener('change', update);
@@ -117,7 +117,13 @@ export function SecondaryProjectsSection() {
 					<div className="flex">
 						{slides.map((group, slideIndex) => (
 							<div key={slideIndex} className="flex-[0_0_100%]">
-								<div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-5 lg:gap-7 w-full">
+								<div
+									className={`grid w-full gap-5 lg:gap-7 ${
+										itemsPerSlide === 1
+											? 'grid-cols-1'
+											: 'grid-cols-1 sm:grid-cols-2 sm:grid-rows-2'
+									}`}
+								>
 									{group.map((project) => (
 										<motion.div
 											key={project.id}
