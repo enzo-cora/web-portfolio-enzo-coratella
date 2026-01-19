@@ -1,10 +1,13 @@
 'use client';
 
-import HeroSection from './components/HeroSection';
-import ProjectsSection from './components/ProjectsSection';
-import ContactSection from './components/ContactSection';
 import { useTheme } from './components/theme/ThemeProvider';
 import { ThemeToggle } from './components/theme/ThemeToggle';
+import {HeroSection} from "@/app/components/HeroSection";
+import {MainProjectsSection} from "@/app/components/MainProjectsSection";
+import {ContactSection} from "@/app/components/ContactSection";
+import {SkillsSection} from "@/app/components/SkillsSection";
+import {SecondaryProjectsSection} from "@/app/components/SecondaryProjectsSection";
+import {DevelopmentProcess} from "@/app/components/DevelopmentProcess";
 
 export default function FullStackPortfolio() {
 	const { theme } = useTheme();
@@ -15,7 +18,10 @@ export default function FullStackPortfolio() {
 		<main className={`min-h-screen ${themeClasses}`}>
 			<ThemeToggle />
 			<HeroSection />
-			<ProjectsSection />
+			<SkillsSection />
+			<MainProjectsSection />
+			<SecondaryProjectsSection />
+			<DevelopmentProcess />
 			<ContactSection />
 		</main>
 	);
