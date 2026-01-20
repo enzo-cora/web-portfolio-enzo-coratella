@@ -1,9 +1,9 @@
+'use client';
+
 import {motion} from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import {Project} from "@/app/components/project-list-section/types/project.type";
-
-
+import {Project} from "@/pages/landing/components/project-list-section/types/project.type";
 
 
 export function ProjectCard( props: { project: Project }) {

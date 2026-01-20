@@ -1,8 +1,10 @@
+'use client';
+
 import {motion} from 'framer-motion';
 import {useCallback, useEffect, useState} from 'react';
 import useEmblaCarousel from "embla-carousel-react";
-import {Project, Tags} from "@/app/components/project-list-section/types/project.type";
-import {ProjectCard} from "@/app/components/project-list-section/ProjectCard";
+import {Project, Tags} from "@/pages/landing/components/project-list-section/types/project.type";
+import {ProjectCard} from "@/pages/landing/components/project-list-section/ProjectCard";
 
 
 const filters: Array<Tags | 'Tous'> = ['Tous', 'Backend', 'Fullstack', 'Architecture', 'DevOps']

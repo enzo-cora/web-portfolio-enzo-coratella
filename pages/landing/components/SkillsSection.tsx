@@ -1,3 +1,5 @@
+'use client';
+
 export function SkillsSection() {
     const skills = [
         "NodeJs",

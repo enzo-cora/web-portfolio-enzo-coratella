@@ -1,4 +1,6 @@
-import { motion } from 'framer-motion';
+'use client';
+
+import {motion} from 'framer-motion';
 import Image from "next/image";
 import landingPageImage from "@/public/images/projet-immobilier/search-landing-page.webp"
 import statisticLandingPage from "@/public/images/project-crypto/statistic-landing-page.webp"
