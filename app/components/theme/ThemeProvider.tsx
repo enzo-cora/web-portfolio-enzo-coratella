@@ -23,8 +23,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 			root.classList.toggle('dark', storedTheme === 'dark');
 		} else {
 			// Set default theme to dark if no theme is stored
-			setTheme('dark');
-			root.classList.add('dark');
+			setTheme('light');
+			root.classList.add('light');
 		}
 	}, []);
 

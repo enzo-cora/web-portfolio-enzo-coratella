@@ -37,11 +37,10 @@ export function HeroSection() {
 						</h1>
 						<h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white">Senior Software Engineer </h2>
 						<p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                            Software engineer avec {experienceYears}+ ans d’expérience, je conçois des solutions web scalables de bout en bout et aide à structurer des équipes techniques.
+                            Software engineer avec <b>{experienceYears}+ ans d’expérience</b>, je conçois des solutions web scalables de bout en bout et aide à structurer des équipes techniques.
 						</p>
 						<p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto">
-							Senior software engineer chez <span className="text-blue-600 dark:text-blue-400">Hermes Digital</span> et ancien backend developer chez {' '}
-							<span className="text-purple-600 dark:text-purple-400">Bridge</span>
+							Senior software engineer chez <span className="text-blue-600 dark:text-blue-400">Hermes Digital</span> et ancien backend developer en fintech chez <span className="text-purple-600 dark:text-purple-400">Bridge</span>
 						</p>
 					</div>
 					<div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-6 md:mb-8">

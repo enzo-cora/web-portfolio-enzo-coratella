@@ -23,7 +23,7 @@ export const DevelopmentProcess = () => {
 			title: 'Ideation & Planning',
 			colorClasses: {
 				bg: theme === 'dark' ? 'bg-blue-500/10' : 'bg-blue-100',
-				text: theme === 'dark' ? 'text-blue-400' : 'text-blue-600',
+				text: theme === 'dark' ? 'text-blue-400' : 'text-blue-500',
 				gradientFrom: 'from-blue-500',
 				gradientTo: 'to-purple-500',
 				hoverBorder: theme === 'dark' ? 'group-hover:border-blue-500/30' : 'group-hover:border-blue-300',
@@ -65,11 +65,11 @@ export const DevelopmentProcess = () => {
 	];
 
 	return (
-		<section className="bg-gray-50 py-16 md:py-20 relative">
+		<section className="bg-gray-50 dark:bg-gray-900 py-16 md:py-20 relative">
 			<div className="container mx-auto px-4">
-				<h2 className={`text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-center ${theme === 'dark' ? '' : 'text-gray-900'}`}>Development Process</h2>
+				<h2 className={`text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-center ${theme === 'dark' ? '' : 'text-gray-900'}`}>Processes de développement</h2>
 				<p className={`text-sm sm:text-base text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-					A systematic approach to building exceptional mobile applications
+					Une approche systémique pour créer des applications d&#39;exception: <b>robustes</b>, <b>scalables</b> et <b>évolutives</b>.
 				</p>
 
 				<div className="max-w-5xl mx-auto">

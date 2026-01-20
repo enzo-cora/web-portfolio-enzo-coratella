@@ -3,10 +3,10 @@
 import { useTheme } from './components/theme/ThemeProvider';
 import { ThemeToggle } from './components/theme/ThemeToggle';
 import {HeroSection} from "@/app/components/HeroSection";
-import {MainProjectsSection} from "@/app/components/MainProjectsSection";
+import {PinnedProjectsSection} from "@/app/components/PinnedProjectsSection";
 import {ContactSection} from "@/app/components/ContactSection";
 import {SkillsSection} from "@/app/components/SkillsSection";
-import {SecondaryProjectsSection} from "@/app/components/SecondaryProjectsSection";
+import {ProjectList} from "@/app/components/project-list-section/ProjectList";
 import {DevelopmentProcess} from "@/app/components/DevelopmentProcess";
 
 export default function FullStackPortfolio() {
@@ -19,8 +19,8 @@ export default function FullStackPortfolio() {
 			<ThemeToggle />
 			<HeroSection />
 			<SkillsSection />
-			<MainProjectsSection />
-			<SecondaryProjectsSection />
+			<PinnedProjectsSection />
+			<ProjectList />
 			<DevelopmentProcess />
 			<ContactSection />
 		</main>

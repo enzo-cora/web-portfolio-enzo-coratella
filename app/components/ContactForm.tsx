@@ -28,14 +28,14 @@ export function ContactForm() {
 			const data = await response.json();
 
 			if (!response.ok) {
-				throw new Error(data.error || 'Failed to send message');
+				throw new Error(data.error || 'Impossible de délivrer le message');
 			}
 
 			setStatus('success');
 			setFormData({ name: '', email: '', message: '' });
 		} catch (error) {
 			setStatus('error');
-			setErrorMessage(error instanceof Error ? error.message : 'Failed to send message');
+			setErrorMessage(error instanceof Error ? error.message : 'Impossible de délivrer le message');
 		}
 	};
 
@@ -43,7 +43,7 @@ export function ContactForm() {
 		<form className="space-y-6" onSubmit={handleSubmit}>
 			<div>
 				<label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-					Name
+					Nom
 				</label>
 				<input
 					type="text"
@@ -88,10 +88,10 @@ export function ContactForm() {
 				disabled={status === 'loading'}
 				className="w-full px-6 py-3 text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
 			>
-				{status === 'loading' ? 'Sending...' : 'Send Message'}
+				{status === 'loading' ? 'Envoi en cours...' : 'Envoyer le message'}
 			</button>
 
-			{status === 'success' && <p className="text-green-600 dark:text-green-400 text-center">Message sent successfully!</p>}
+			{status === 'success' && <p className="text-green-600 dark:text-green-400 text-center">Message envoyé avec succès.</p>}
 
 			{status === 'error' && <p className="text-red-600 dark:text-red-400 text-center">{errorMessage}</p>}
 		</form>
