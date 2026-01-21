@@ -181,7 +181,7 @@ const technicalChallenges: TechnicalChallengeData[] = [
 ];
 
 
-export const immobilierFullPageData: ProjectFullPageData = {
+export const immobilierFullData: ProjectFullPageData = {
     slug: 'immobilier-app',
     heroSectionData,
     gallery,

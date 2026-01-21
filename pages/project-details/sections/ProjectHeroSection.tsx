@@ -1,3 +1,5 @@
+'use client';
+
 import {useTheme} from "@/app/theme/ThemeProvider";
 import {IconComponent} from "@/pages/types/utils";
 

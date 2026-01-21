@@ -1,4 +1,5 @@
-import {projectDataList, ProjectDetailsPage} from "@/pages/project-details/ProjectDetailsPage";
+import {ProjectDetailsPage} from "@/pages/project-details/ProjectDetailsPage";
+import {projectDataList} from "@/pages/project-details/data/list-projects.data";
 
 export const dynamicParams = false;
 

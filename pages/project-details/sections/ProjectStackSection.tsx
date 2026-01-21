@@ -1,5 +1,6 @@
-import {useTheme} from "@/app/theme/ThemeProvider";
+'use client';
 
+import {useTheme} from "@/app/theme/ThemeProvider";
 
 export type ProjectStackData = {
     core_skills: Array<{
