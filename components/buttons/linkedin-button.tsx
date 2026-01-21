@@ -1,5 +1,5 @@
 import Image from "next/image";
-import linkedinLogo from "@/public/images/linkedin-icon.svg"
+import linkedinLogo from "@/public/svg/linkedin-icon.svg"
 
 export const LinkedinButton = () => (<div className=" flex flex-col sm:flex-row justify-center items-center gap-4 pt-8 cursor-pointer">
     <a

@@ -4,6 +4,7 @@ import {motion} from 'framer-motion';
 import {useState} from 'react';
 import Image from "next/image";
 import enzo_photo from "@/public/enzo_photo.jpeg"
+import grid_svg from "@/public/svg/grid.svg";
 import {LinkedinButton} from "@/components/buttons/linkedin-button";
 import {GitlabButton} from "@/components/buttons/gitlab-button";
 
@@ -28,7 +29,10 @@ export function HeroSection() {
 			</div>
 
 			<div className="absolute inset-0">
-				<div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20 dark:opacity-10" />
+				<div
+					className="absolute inset-0 opacity-20 dark:opacity-10"
+					style={{ backgroundImage: `url(${grid_svg.src})` }}
+				/>
 			</div>
 
 			<div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 pt-8 md:pt-0">

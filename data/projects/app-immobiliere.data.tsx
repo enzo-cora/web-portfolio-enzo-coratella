@@ -1,12 +1,12 @@
 import {ArrowPathIcon, CloudIcon, DocumentTextIcon, UserGroupIcon} from "@heroicons/react/24/outline";
 import {BuildingIcon, DatabaseBackupIcon, PaintbrushIcon} from "lucide-react";
 import {Feature} from "@/components/project-page/sections/ProjectFeatures";
-import searchLandingPage from "@/public/images/projet-immobilier/search-landing-page.webp";
+import searchLandingPage from "@/public/projects-gallery/app-immobilier/search-landing-page.webp";
 import {GalleryData} from "@/components/project-page/sections/ProjectGalerie";
-import fullPageScrolling from "@/public/images/projet-immobilier/full-page-scrolling.webp"
-import houseInfo from "@/public/images/projet-immobilier/house-information-page.webp"
-import phoneVersion from "@/public/images/projet-immobilier/phone-version.webp"
-import gitlabLogo from "@/public/images/gitlab-logo-500-rgb.svg"
+import fullPageScrolling from "@/public/projects-gallery/app-immobilier/full-page-scrolling.webp"
+import houseInfo from "@/public/projects-gallery/app-immobilier/house-information-page.webp"
+import phoneVersion from "@/public/projects-gallery/app-immobilier/phone-version.webp"
+import gitlabLogo from "@/public/svg/gitlab-logo-500-rgb.svg"
 import {ProjectPresentationData} from "@/components/project-page/sections/ProjectPresentationText";
 import Image from "next/image";
 import {TechnicalChallengeData} from "@/components/project-page/sections/ProjectTechnicalChallenges";

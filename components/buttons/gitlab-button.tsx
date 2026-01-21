@@ -1,4 +1,4 @@
-import gitlabLogo from "@/public/images/gitlab-logo-500-rgb.svg"
+import gitlabLogo from "@/public/svg/gitlab-logo-500-rgb.svg"
 import Image from "next/image";
 
 export const GitlabButton = () => (<div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-8">

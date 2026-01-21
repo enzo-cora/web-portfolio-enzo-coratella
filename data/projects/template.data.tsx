@@ -1,10 +1,10 @@
 import {ArrowPathIcon, CloudIcon, DocumentTextIcon, UserGroupIcon} from "@heroicons/react/24/outline";
 import {DatabaseBackupIcon, PaintbrushIcon} from "lucide-react";
 import {Feature} from "@/components/project-page/sections/ProjectFeatures";
-import searchLandingPage from "@/public/images/projet-immobilier/search-landing-page.webp";
+import searchLandingPage from "@/public/projects-gallery/app-immobilier/search-landing-page.webp";
 import {GalleryData} from "@/components/project-page/sections/ProjectGalerie";
-import fullPageScrolling from "@/public/images/projet-immobilier/full-page-scrolling.webp"
-import gitlabLogo from "@/public/images/gitlab-logo-500-rgb.svg"
+import fullPageScrolling from "@/public/projects-gallery/app-immobilier/full-page-scrolling.webp"
+import gitlabLogo from "@/public/svg/gitlab-logo-500-rgb.svg"
 import {ProjectPresentationData} from "@/components/project-page/sections/ProjectPresentationText";
 import Image from "next/image";
 import {TechnicalChallengeData} from "@/components/project-page/sections/ProjectTechnicalChallenges";
@@ -18,20 +18,22 @@ import {BoltIcon} from "@heroicons/react/24/solid";
 import React from "react";
 /* ----------------------- [HERO DATA] SECTION -----------------------------*/
 
+const slug = Slugs.immobilier //TODO REPLACE ME
+
 const heroSectionData: ProjectHeroSectionData = {
     title: "{{PROJECT_TITLE}}",
     technical_tags: ["Backend", "Fullstack", "Architecture"],
     subtitle_description: "{{ONE_LINE_SUBTITLE_DESCRIPTION}}",
-    short_app_description: "{{SHORT_APP_DESCRIPTION (2–3 lignes max)}}",
+    short_app_description: "{{SHORT_APP_DESCRIPTION (2 lignes max)}}",
     impact_metrics: [
         {
-            value: '{{METRIC_1_VALUE}}',
-            label: '{{METRIC_1_LABEL}}',
+            value: '{{METRIC_1_VALUE}}', //Ex: '<200ms'
+            label: '{{METRIC_1_LABEL}}',// temps de réponse
             icon: DocumentTextIcon,
         },
         {
-            value: '{{METRIC_2_VALUE}}',
-            label: '{{METRIC_2_LABEL}}',
+            value: '{{METRIC_2_VALUE}}', //Ex: 200000
+            label: '{{METRIC_2_LABEL}}', //ex: articles référencés
             icon: CloudIcon,
         },
         // ...ajoute d’autres métriques si besoin
@@ -40,13 +42,13 @@ const heroSectionData: ProjectHeroSectionData = {
         app_type: "{{APP_TYPE}}",
         business_metrics: [
             {
-                value: '{{BIZ_METRIC_1_VALUE}}',
-                label: '{{BIZ_METRIC_1_LABEL}}',
+                value: '{{BIZ_METRIC_1_VALUE}}', //Ex: 300
+                label: '{{BIZ_METRIC_1_LABEL}}', //Ex:  clients actifs.
                 icon: DocumentTextIcon,
             },
             // ...
         ],
-        featuresPills: ['{{PILL_1}}', '{{PILL_2}}', '{{PILL_3}}'],
+        featuresPills: ['Cross-Platform', 'API-First', 'Scalable Architecture'],
     },
 }
 
@@ -57,7 +59,7 @@ const gallery: GalleryData = {
     ],
     column_2: [
         {image: searchLandingPage, alt: '{{GALLERY_ALT_2}}'},
-        // ...ajoute d’autres images si besoin
+        // ...ajoute d’autres images si besoin (au total 2 min, 4max)
     ]
 }
 
@@ -67,14 +69,14 @@ const presentationData: ProjectPresentationData = {
     textComponent: (
         <div className="text-md text-justify leading-relaxed">
             <p>
-                [LONG_DESCRIPTION_PLACEHOLDER] (Ici on s’attend à une description plus ou moins longue, avec contexte, objectifs, évolutions, etc.).
-                Sauter les ligne avec une balise <br/> quand nécessaire.
+                - [LONG_DESCRIPTION_PLACEHOLDER] (Ici on s’attend à une description plus ou moins longue, avec contexte, objectifs, évolutions, etc.).
+                - Sauter les ligne avec une seule balise BR entre les paragraphes.
             </p>
         </div>
     ),
     sources: [
         {
-            icon: <BoltIcon className="h-4 w-4 text-yellow-400" />,
+            icon: <BoltIcon className="h-4 w-4 text-yellow-400"/>,
             label: "{{SOURCE_1_LABEL}}",
             link: "{{SOURCE_1_LINK}}",
             description: "{{SOURCE_1_DESCRIPTION}}"
@@ -130,12 +132,12 @@ const pinToLandingPage: PinnedProject = {
     title: heroSectionData.title,
     smallDescription: heroSectionData.subtitle_description,
     image: projectMainPicture,
-    slug: Slugs.immobilier,
+    slug: slug,
     bulletPointParagraphs: [
         {
             paragraphTitle: "Frontend",
             bulletsPoints: [
-                "{{very short key achivment 1}}", //Ca doit tenir sur 5 mots maxiiiii par key
+                "{{very short key achivment 1}}", //Ca doit tenir sur 5 mots clés maxi par ligne.
                 "{{very short key achivment 2}}",
                 "{{very short key achivment 3}}",
             ]
@@ -160,8 +162,8 @@ const pinToLandingPage: PinnedProject = {
 }
 
 /* ----------------------- [PROJECT CAROUSEL] SECTION -----------------------------*/
-const projectPreview : ProjectPreview = {
-    slug: Slugs.immobilier,
+const projectPreview: ProjectPreview = {
+    slug: slug,
     title: heroSectionData.title,
     description: heroSectionData.subtitle_description,
     image: projectMainPicture,
@@ -202,8 +204,8 @@ const technicalChallenges: TechnicalChallengeData[] = [
 ];
 
 
-export const immobilierFullData: FullProjectData = {
-    slug: Slugs.immobilier,
+export const templateFullData: FullProjectData = {
+    slug: slug,
     heroSectionData,
     gallery,
     presentation: presentationData,

@@ -1,10 +1,10 @@
 import {ArrowPathIcon, CloudIcon, DocumentTextIcon, UserGroupIcon} from "@heroicons/react/24/outline";
 import {DatabaseBackupIcon, PaintbrushIcon} from "lucide-react";
 import {Feature} from "@/components/project-page/sections/ProjectFeatures";
-import searchLandingPage from "@/public/images/projet-immobilier/search-landing-page.webp";
+import searchLandingPage from "@/public/projects-gallery/app-immobilier/search-landing-page.webp";
 import {GalleryData} from "@/components/project-page/sections/ProjectGalerie";
-import fullPageScrolling from "@/public/images/projet-immobilier/full-page-scrolling.webp"
-import gitlabLogo from "@/public/images/gitlab-logo-500-rgb.svg"
+import fullPageScrolling from "@/public/projects-gallery/app-immobilier/full-page-scrolling.webp"
+import gitlabLogo from "@/public/svg/gitlab-logo-500-rgb.svg"
 import {ProjectPresentationData} from "@/components/project-page/sections/ProjectPresentationText";
 import Image from "next/image";
 import {TechnicalChallengeData} from "@/components/project-page/sections/ProjectTechnicalChallenges";
@@ -18,35 +18,55 @@ import {BoltIcon} from "@heroicons/react/24/solid";
 import React from "react";
 /* ----------------------- [HERO DATA] SECTION -----------------------------*/
 
+const slug = Slugs.whoAmI
+
 const heroSectionData: ProjectHeroSectionData = {
-    title: "{{PROJECT_TITLE}}",
+    title: "Who Am I game",
     technical_tags: ["Backend", "Fullstack", "Architecture"],
-    subtitle_description: "{{ONE_LINE_SUBTITLE_DESCRIPTION}}",
-    short_app_description: "{{SHORT_APP_DESCRIPTION (2–3 lignes max)}}",
+    subtitle_description: "Real-time web app multiplayer game",
+    short_app_description: "Jeu multijoueur en temps réel inspiré de Guess Who?, jouable en ligne à plusieurs, via une interface interactive",
     impact_metrics: [
         {
-            value: '{{METRIC_1_VALUE}}',
-            label: '{{METRIC_1_LABEL}}',
-            icon: DocumentTextIcon,
+            value: "<30ms",
+            label: "De latence",
+            icon: BoltIcon,
         },
         {
-            value: '{{METRIC_2_VALUE}}',
-            label: '{{METRIC_2_LABEL}}',
+            value: "1k+",
+            label: "Connexions simultanées",
+            icon: UserGroupIcon,
+        },
+        {
+            value: "99.9%",
+            label: "Disponibilité",
             icon: CloudIcon,
         },
-        // ...ajoute d’autres métriques si besoin
+        {
+            value: "0",
+            label: "Downtime prod",
+            icon: DocumentTextIcon,
+        },
     ],
     project_card: {
-        app_type: "{{APP_TYPE}}",
+        app_type: "Web App",
         business_metrics: [
             {
-                value: '{{BIZ_METRIC_1_VALUE}}',
-                label: '{{BIZ_METRIC_1_LABEL}}',
-                icon: DocumentTextIcon,
+                value: "2–16",
+                label: "Joueurs par salon",
+                icon: UserGroupIcon,
             },
-            // ...
+            {
+                value: "0",
+                label: "Session desync",
+                icon: ArrowPathIcon,
+            },
+            {
+                value: "60+",
+                label: "Salons simultanés",
+                icon: CloudIcon,
+            },
         ],
-        featuresPills: ['{{PILL_1}}', '{{PILL_2}}', '{{PILL_3}}'],
+        featuresPills: ['Cross-Platform', 'API-First', 'Scalable Architecture'],
     },
 }
 
@@ -67,14 +87,31 @@ const presentationData: ProjectPresentationData = {
     textComponent: (
         <div className="text-md text-justify leading-relaxed">
             <p>
-                [LONG_DESCRIPTION_PLACEHOLDER] (Ici on s’attend à une description plus ou moins longue, avec contexte, objectifs, évolutions, etc.).
-                Sauter les ligne avec une balise <br/> quand nécessaire.
+                « Who Am I game » est une application web temps réel inspirée du jeu de société classique « Guess Who? ».
+                <br/>
+                Objectif : permettre à deux joueurs de s’affronter en ligne via une interface interactive et responsive.
+                Le projet a été conçu pour allier réactivité, expérience utilisateur fluide et infrastructure DevOps
+                moderne. Il est structuré en plusieurs dépôts indépendants afin d’assurer scalabilité et maintenabilité.
+                <br/>
+                La partie se déroule en étapes claires :
+                <ul className="list-disc list-inside mt-2">
+                    <li>Le premier joueur saisit un mot à deviner</li>
+                    <li>Les autres posent des questions fermées (oui / non)</li>
+                    <li>La partie continue jusqu’à ce que quelqu’un trouve le mot</li>
+                </ul>
+                <br/>
+                L’interface s’adapte dynamiquement au rôle du joueur (devineur ou maître du mot) et à l’état de la
+                partie. Les échanges sont synchronisés instantanément via <strong>Socket.IO</strong>.
+                <br/>
+                L’état de l’application est décentralisé et plusieurs salons peuvent être joués en parallèle, permettant
+                à chaque joueur de suivre l’avancement, de voir qui est connecté, ainsi que les questions posées et les
+                réponses données.
             </p>
         </div>
     ),
     sources: [
         {
-            icon: <BoltIcon className="h-4 w-4 text-yellow-400" />,
+            icon: <BoltIcon className="h-4 w-4 text-yellow-400"/>,
             label: "{{SOURCE_1_LABEL}}",
             link: "{{SOURCE_1_LINK}}",
             description: "{{SOURCE_1_DESCRIPTION}}"
@@ -130,12 +167,12 @@ const pinToLandingPage: PinnedProject = {
     title: heroSectionData.title,
     smallDescription: heroSectionData.subtitle_description,
     image: projectMainPicture,
-    slug: Slugs.immobilier,
+    slug: slug,
     bulletPointParagraphs: [
         {
             paragraphTitle: "Frontend",
             bulletsPoints: [
-                "{{very short key achivment 1}}", //Ca doit tenir sur 5 mots maxiiiii par key
+                "{{very short key achivment 1}}", //Ca doit tenir sur 5 mots clés maxi par ligne.
                 "{{very short key achivment 2}}",
                 "{{very short key achivment 3}}",
             ]
@@ -160,8 +197,8 @@ const pinToLandingPage: PinnedProject = {
 }
 
 /* ----------------------- [PROJECT CAROUSEL] SECTION -----------------------------*/
-const projectPreview : ProjectPreview = {
-    slug: Slugs.immobilier,
+const projectPreview: ProjectPreview = {
+    slug: slug,
     title: heroSectionData.title,
     description: heroSectionData.subtitle_description,
     image: projectMainPicture,
@@ -202,8 +239,8 @@ const technicalChallenges: TechnicalChallengeData[] = [
 ];
 
 
-export const immobilierFullData: FullProjectData = {
-    slug: Slugs.immobilier,
+export const whoAmIGameFullData: FullProjectData = {
+    slug: slug,
     heroSectionData,
     gallery,
     presentation: presentationData,
