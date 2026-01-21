@@ -9,7 +9,7 @@ export type PinnedProject = {
     title: string,
     smallDescription: string,
     slug: Slugs,
-    imageSrc: StaticImageData,
+    image: StaticImageData,
     bulletPointParagraphs: Array<{
         paragraphTitle: string,
         bulletsPoints: string[]
@@ -84,8 +84,8 @@ export function PinnedProjectsSection(props: { pinnedProjects: PinnedProject[] }
                                                 </div>
                                             </div>
 
-                                            <div className="bg-gray-50 rounded-xl p-6 dark:bg-black/30">
-                                                <Image src={project.imageSrc} alt={`Image du projet ${project.title}`}/>
+                                            <div className="bg-gray-50 rounded-xl p-6 dark:bg-black/30 content-center">
+                                                <Image src={project.image} alt={`Image du projet ${project.title}`}/>
                                             </div>
                                         </div>
                                     </div>

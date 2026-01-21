@@ -75,12 +75,12 @@ const heroSectionData: ProjectHeroSectionData = {
 
 const gallery: GalleryData = {
     column_1: [
-        {imageSrc: fullPageScrolling.src, alt: 'Full page scrolling'}
+        {image: fullPageScrolling, alt: 'Full page scrolling'}
     ],
     column_2: [
-        {imageSrc: searchLandingPage.src, alt: 'Recherche - landing page'},
-        {imageSrc: phoneVersion.src, alt: 'Ecrans version mobile'},
-        {imageSrc: houseInfo.src, alt: 'Fiche du bien'}
+        {image: searchLandingPage, alt: 'Recherche - landing page'},
+        {image: phoneVersion, alt: 'Ecrans version mobile'},
+        {image: houseInfo, alt: 'Fiche du bien'}
     ]
 }
 
@@ -213,33 +213,31 @@ const projectMainPicture = searchLandingPage
 const pinToLandingPage: PinnedProject = {
     title: heroSectionData.title,
     smallDescription: heroSectionData.subtitle_description,
-    imageSrc: projectMainPicture,
+    image: projectMainPicture,
     slug: slug,
     bulletPointParagraphs: [
         {
-            paragraphTitle: "Frontend Architecture",
+            paragraphTitle: "Frontend",
             bulletsPoints: [
-                "Next.js Server Components",
-                "Real-time Cart & Inventory",
-                "Stripe Payment Integration",
-                "PWA with Offline Support"
+                "Migration Angular → React",
+                "Recherche avec filtres avancés",
+                "Optimisations performance frontend",
             ]
         },
         {
             paragraphTitle: "Backend Systems",
             bulletsPoints: [
-                "Node.js Microservices",
-                "Redis Caching Layer",
-                "Kafka Event Streaming",
-                "Elasticsearch Product Search"
+                "API REST Node.js",
+                "PostgreSQL optimisé",
+                "Authentification sécurisée multi-rôles",
             ]
         },
         {
             paragraphTitle: "Key Achievements",
             bulletsPoints: [
-                "99.99% Uptime with Blue-Green Deployment",
-                "300ms Average API Response Time",
-                "45% Reduction in Infrastructure Costs"
+                "CRM immobilier centralisé",
+                "API <200ms",
+                "Docker, CI/CD, AWS",
             ]
         }
     ]

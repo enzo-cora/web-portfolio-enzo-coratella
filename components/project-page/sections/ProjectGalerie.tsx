@@ -2,16 +2,16 @@
 
 import * as React from 'react';
 import {useTheme} from '@/app/theme/ThemeProvider';
-import Image from 'next/image';
+import Image, {StaticImageData} from 'next/image';
 
 export type GalleryData = {
     column_1: Array<{
-        imageSrc: string;
-        alt?: string;
+        image: StaticImageData;
+        alt: string;
     }>,
     column_2: Array<{
-        imageSrc: string;
-        alt?: string;
+        image: StaticImageData;
+        alt: string;
     }>,
 };
 
@@ -48,15 +48,15 @@ export const ProjectGalerie = (props: { gallery: GalleryData }) => {
                     <div className="flex flex-col gap-4 sm:gap-6">
                         {gallery.column_1.map((img) => (
                             <button
-                                key={img.imageSrc}
+                                key={img.image.src}
                                 type="button"
                                 className="block w-full rounded-xl overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                                onClick={() => setOpenSrc(img.imageSrc)}
+                                onClick={() => setOpenSrc(img.image.src)}
                                 aria-label="Agrandir l’image"
                             >
                                 <Image
-                                    src={img.imageSrc}
-                                    alt={img.alt ?? ''}
+                                    src={img.image}
+                                    alt={img.alt}
                                     width={800}
                                     height={800}
                                     className="w-full h-auto block hover:opacity-95 transition"
@@ -68,15 +68,15 @@ export const ProjectGalerie = (props: { gallery: GalleryData }) => {
                     <div className="flex flex-col gap-4 sm:gap-6">
                         {gallery.column_2.map((img) => (
                             <button
-                                key={img.imageSrc}
+                                key={img.image.src}
                                 type="button"
                                 className="block w-full rounded-xl overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                                onClick={() => setOpenSrc(img.imageSrc)}
+                                onClick={() => setOpenSrc(img.image.src)}
                                 aria-label="Agrandir l’image"
                             >
                                 <Image
-                                    src={img.imageSrc}
-                                    alt={img.alt ?? ''}
+                                    src={img.image}
+                                    alt={img.alt}
                                     width={800}
                                     height={800}
                                     className="w-full h-auto block hover:opacity-95 transition"

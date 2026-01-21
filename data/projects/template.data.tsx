@@ -53,10 +53,10 @@ const heroSectionData: ProjectHeroSectionData = {
 
 const gallery: GalleryData = {
     column_1: [
-        {imageSrc: fullPageScrolling.src, alt: '{{GALLERY_ALT_1}}'}
+        {image: fullPageScrolling, alt: '{{GALLERY_ALT_1}}'}
     ],
     column_2: [
-        {imageSrc: searchLandingPage.src, alt: '{{GALLERY_ALT_2}}'},
+        {image: searchLandingPage, alt: '{{GALLERY_ALT_2}}'},
         // ...ajoute d’autres images si besoin
     ]
 }
@@ -67,11 +67,8 @@ const presentationData: ProjectPresentationData = {
     textComponent: (
         <div className="text-md text-justify leading-relaxed">
             <p>
-                <b>{{PROJECT_NAME}}</b> — {{INTRO_SENTENCE}}.
-            </p>
-            <br/>
-            <p className="text-sm opacity-80">
-                "{{LONG_DESCRIPTION_PLACEHOLDER}}" (Ici on s’attend à une description plus ou moins longue, avec contexte, objectifs, évolutions, etc.).
+                [LONG_DESCRIPTION_PLACEHOLDER] (Ici on s’attend à une description plus ou moins longue, avec contexte, objectifs, évolutions, etc.).
+                Sauter les ligne avec une balise <br/> quand nécessaire.
             </p>
         </div>
     ),
@@ -132,24 +129,33 @@ const projectMainPicture = searchLandingPage
 const pinToLandingPage: PinnedProject = {
     title: heroSectionData.title,
     smallDescription: heroSectionData.subtitle_description,
-    imageSrc: projectMainPicture,
+    image: projectMainPicture,
     slug: Slugs.immobilier,
     bulletPointParagraphs: [
         {
-            paragraphTitle: "{{PIN_SECTION_1_TITLE}}",
+            paragraphTitle: "Frontend",
             bulletsPoints: [
-                "{{PIN_BULLET_1}}",
-                "{{PIN_BULLET_2}}",
-                // ...
+                "{{very short key achivment 1}}", //Ca doit tenir sur 5 mots maxiiiii par key
+                "{{very short key achivment 2}}",
+                "{{very short key achivment 3}}",
             ]
         },
         {
-            paragraphTitle: "{{PIN_SECTION_2_TITLE}}",
+            paragraphTitle: "Backend Systems",
             bulletsPoints: [
-                "{{PIN_BULLET_3}}",
-                "{{PIN_BULLET_4}}",
+                "{{very short key achivment 1}}",
+                "{{very short key achivment 2}}",
+                "{{very short key achivment 3}}",
             ]
         },
+        {
+            paragraphTitle: "Key Achievements",
+            bulletsPoints: [
+                "{{very short global key achivment 1}}",
+                "{{very short global key achivment 2}}",
+                "{{very short global key achivment 3}}",
+            ]
+        }
     ]
 }
 
