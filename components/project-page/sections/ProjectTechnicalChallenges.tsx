@@ -1,12 +1,12 @@
 'use client';
 
 import {useTheme} from "@/app/theme/ThemeProvider";
-import React from "react";
+import React, {ReactNode} from "react";
 import {IconComponent} from "@/components/utils.type";
 
 export interface TechnicalChallengeData {
     scopeTitle: string; //Backend / Frontend / ...
-    scopeDescription: string
+    scopeDescription: string | ReactNode
     icon: IconComponent;
     challengesList: string[];
 }

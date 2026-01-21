@@ -1,6 +1,5 @@
 'use client';
 
-import {motion} from 'framer-motion';
 import {useCallback, useEffect, useState} from 'react';
 import useEmblaCarousel from "embla-carousel-react";
 import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/project-preview.type";
@@ -72,15 +71,7 @@ export function ProjectList(props: { projectsPreview: ProjectPreview[] }) {
     }, [activeFilter, emblaApi]);
 
     return (
-        <section className="py-10 md:py-14 px-4 max-w-7xl mx-auto">
-            <motion.h3
-                initial={{opacity: 0}}
-                whileInView={{opacity: 1}}
-                viewport={{once: true}}
-                className="text-xl font-bold mb-8 text-left text-purple-600 dark:text-white"
-            >
-                Tous mes projets
-            </motion.h3>
+        <section className="pb-10 md:pb-14 px-4 max-w-7xl mx-auto">
 
             <div className="relative">
 

@@ -18,11 +18,11 @@ import {BoltIcon} from "@heroicons/react/24/solid";
 import React from "react";
 /* ----------------------- [HERO DATA] SECTION -----------------------------*/
 
-const slug = Slugs.immobilier //TODO REPLACE ME
+const slug = Slugs.whoAmI //TODO REPLACE ME
 
 const heroSectionData: ProjectHeroSectionData = {
     title: "{{PROJECT_TITLE}}",
-    technical_tags: ["Backend", "Fullstack", "Architecture"],
+    technical_tags: ["Backend", "Fullstack"], //Available values: ['Backend', 'Fullstack', 'Architecture', 'DevOps']
     subtitle_description: "{{ONE_LINE_SUBTITLE_DESCRIPTION}}",
     short_app_description: "{{SHORT_APP_DESCRIPTION (2 lignes max)}}",
     impact_metrics: [
@@ -55,10 +55,10 @@ const heroSectionData: ProjectHeroSectionData = {
 
 const gallery: GalleryData = {
     column_1: [
-        {image: fullPageScrolling, alt: '{{GALLERY_ALT_1}}'}
+        {image: fullPageScrolling, alt: 'xxxxxxxx'}
     ],
     column_2: [
-        {image: searchLandingPage, alt: '{{GALLERY_ALT_2}}'},
+        {image: searchLandingPage, alt: 'xxxxxxxx'},
         // ...ajoute d’autres images si besoin (au total 2 min, 4max)
     ]
 }
@@ -76,16 +76,16 @@ const presentationData: ProjectPresentationData = {
     ),
     sources: [
         {
-            icon: <BoltIcon className="h-4 w-4 text-yellow-400"/>,
-            label: "{{SOURCE_1_LABEL}}",
-            link: "{{SOURCE_1_LINK}}",
-            description: "{{SOURCE_1_DESCRIPTION}}"
+            icon: <BoltIcon className="text-yellow-400" width={16} height={16} />,
+            label: "Fast try",
+            link: "https://gitlab.com/xxxxxxxxxxxxxxxxxxx",
+            description: "Easy try avec docker"
         },
         {
             icon: <Image src={gitlabLogo} alt="GitLab" width={16} height={16}/>,
-            label: "{{SOURCE_2_LABEL}}",
-            link: "{{SOURCE_2_LINK}}",
-            description: "{{SOURCE_2_DESCRIPTION}}"
+            label: "Gitlab",
+            link: "https://gitlab.com/xxxxxxxxxxxxxxxxxxx",
+            description: "Racine du projet"
         },
     ]
 };
@@ -94,7 +94,7 @@ const presentationData: ProjectPresentationData = {
 
 const projectStackData: ProjectStackData = {
     core_skills: [
-        {name: '{{CORE_SKILL_1}}', level: 90, description: "{{CORE_SKILL_1_DESC}}"},
+        {name: '{{CORE_SKILL_1}}' /*1 mot: exemple "mongodb"*/, level: 90 /*pourcentage d'utilisation dans le projet*/, description: "{{description}}" /*1 mot ou 2 max, ex: database */},
         {name: '{{CORE_SKILL_2}}', level: 80, description: "{{CORE_SKILL_2_DESC}}"},
         // ...
     ],
@@ -125,8 +125,52 @@ const features: Feature[] = [
     // ...ajoute d’autres features si besoin
 ];
 
-/* ----------------------- [PINNED PROJECT] SECTION -----------------------------*/
+/* ----------------------- [PROJECT PREVIEW] SECTION -----------------------------*/
 const projectMainPicture = searchLandingPage
+
+const projectPreview: ProjectPreview = {
+    slug: slug,
+    title: heroSectionData.title,
+    description: heroSectionData.subtitle_description,
+    image: projectMainPicture,
+    technicalTag: heroSectionData.technical_tags,
+    view_project_button: {
+        label: "Voir projet",
+        link: `/projet/${slug}`
+    },
+    button_2: {
+        label: "Gitlab",
+        link: "{{link}}"
+    },
+}
+
+/* ----------------------- [TECHNICAL CHALLENGES] SECTION -----------------------------*/
+const technicalChallenges: TechnicalChallengeData[] = [
+    {
+        scopeTitle: '{{CHALLENGE_SCOPE_1_TITLE}}',
+        scopeDescription: "{{CHALLENGE_SCOPE_1_DESC}}",
+        icon: DatabaseBackupIcon,
+        challengesList: [
+            "{{CHALLENGE_1_ITEM_1}}", //10 mots maxi, on essaye de resté court autant que possible.
+            "{{CHALLENGE_1_ITEM_2}}",
+            "{{CHALLENGE_1_ITEM_3}}",
+            // ...
+        ],
+    },
+    {
+        scopeTitle: '{{CHALLENGE_SCOPE_2_TITLE}}',
+        scopeDescription: "{{CHALLENGE_SCOPE_2_DESC}}",
+        icon: ArrowPathIcon,
+        challengesList: [
+            "{{CHALLENGE_2_ITEM_1}}",
+            "{{CHALLENGE_2_ITEM_2}}",
+            // ...
+        ],
+    },
+];
+
+
+/* ----------------------- [PINNED PROJECT] SECTION -----------------------------*/
 
 const pinToLandingPage: PinnedProject = {
     title: heroSectionData.title,
@@ -160,48 +204,6 @@ const pinToLandingPage: PinnedProject = {
         }
     ]
 }
-
-/* ----------------------- [PROJECT CAROUSEL] SECTION -----------------------------*/
-const projectPreview: ProjectPreview = {
-    slug: slug,
-    title: heroSectionData.title,
-    description: heroSectionData.subtitle_description,
-    image: projectMainPicture,
-    technicalTag: heroSectionData.technical_tags,
-    view_project_button: {
-        label: "Voir projet",
-        link: "{{link}}"
-    },
-    button_2: {
-        label: "Gitlab",
-        link: "{{link}}"
-    },
-}
-
-/* ----------------------- [TECHNICAL CHALLENGES] SECTION -----------------------------*/
-const technicalChallenges: TechnicalChallengeData[] = [
-    {
-        scopeTitle: '{{CHALLENGE_SCOPE_1_TITLE}}',
-        scopeDescription: "{{CHALLENGE_SCOPE_1_DESC}}",
-        icon: DatabaseBackupIcon,
-        challengesList: [
-            "{{CHALLENGE_1_ITEM_1}}",
-            "{{CHALLENGE_1_ITEM_2}}",
-            "{{CHALLENGE_1_ITEM_3}}",
-            // ...
-        ],
-    },
-    {
-        scopeTitle: '{{CHALLENGE_SCOPE_2_TITLE}}',
-        scopeDescription: "{{CHALLENGE_SCOPE_2_DESC}}",
-        icon: ArrowPathIcon,
-        challengesList: [
-            "{{CHALLENGE_2_ITEM_1}}",
-            "{{CHALLENGE_2_ITEM_2}}",
-            // ...
-        ],
-    },
-];
 
 
 export const templateFullData: FullProjectData = {

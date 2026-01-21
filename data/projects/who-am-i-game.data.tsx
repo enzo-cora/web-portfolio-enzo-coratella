@@ -1,9 +1,25 @@
-import {ArrowPathIcon, CloudIcon, DocumentTextIcon, UserGroupIcon} from "@heroicons/react/24/outline";
-import {DatabaseBackupIcon, PaintbrushIcon} from "lucide-react";
+import {
+    AdjustmentsHorizontalIcon,
+    ArrowPathIcon,
+    CircleStackIcon,
+    CloudIcon,
+    DocumentTextIcon,
+    ExclamationTriangleIcon,
+    PaintBrushIcon,
+    RocketLaunchIcon,
+    UserGroupIcon,
+    UserIcon,
+    WifiIcon,
+    WrenchScrewdriverIcon,
+} from "@heroicons/react/24/outline";
 import {Feature} from "@/components/project-page/sections/ProjectFeatures";
-import searchLandingPage from "@/public/projects-gallery/app-immobilier/search-landing-page.webp";
 import {GalleryData} from "@/components/project-page/sections/ProjectGalerie";
-import fullPageScrolling from "@/public/projects-gallery/app-immobilier/full-page-scrolling.webp"
+import profilePageView from "@/public/projects-gallery/who-am-i/profile-page.png"
+import lobbyView from "@/public/projects-gallery/who-am-i/Lobby-who-am-i.png"
+import inGameView from "@/public/projects-gallery/who-am-i/in-game.png"
+import createRoomView from "@/public/projects-gallery/who-am-i/create-room.png"
+import mobileView from "@/public/projects-gallery/who-am-i/mobile-version.webp"
+import loginView from "@/public/projects-gallery/who-am-i/login-page.png"
 import gitlabLogo from "@/public/svg/gitlab-logo-500-rgb.svg"
 import {ProjectPresentationData} from "@/components/project-page/sections/ProjectPresentationText";
 import Image from "next/image";
@@ -14,17 +30,17 @@ import {FullProjectData} from "@/components/project-page/types";
 import {Slugs} from "@/data/slugs";
 import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/project-preview.type";
 import {PinnedProject} from "@/components/landing-page/sections/PinnedProjectsSection";
-import {BoltIcon} from "@heroicons/react/24/solid";
+import {BoltIcon, ServerIcon} from "@heroicons/react/24/solid";
 import React from "react";
 /* ----------------------- [HERO DATA] SECTION -----------------------------*/
 
 const slug = Slugs.whoAmI
 
 const heroSectionData: ProjectHeroSectionData = {
-    title: "Who Am I game",
-    technical_tags: ["Backend", "Fullstack", "Architecture"],
-    subtitle_description: "Real-time web app multiplayer game",
-    short_app_description: "Jeu multijoueur en temps réel inspiré de Guess Who?, jouable en ligne à plusieurs, via une interface interactive",
+    title: "Jeux web: 'Who Am I' ",
+    technical_tags: ["Backend", "Fullstack", "Architecture", 'DevOps'],
+    subtitle_description: "Jeu web multijoueur en temps réel",
+    short_app_description: "Jeu multijoueur en temps réel inspiré de Guess Who?, jouable en ligne à plusieurs, sur tous les navigateurs",
     impact_metrics: [
         {
             value: "<30ms",
@@ -73,11 +89,14 @@ const heroSectionData: ProjectHeroSectionData = {
 
 const gallery: GalleryData = {
     column_1: [
-        {image: fullPageScrolling, alt: '{{GALLERY_ALT_1}}'}
+        {image: lobbyView, alt: 'lobbyView'},
+        {image: loginView, alt: 'loginView'},
+        {image: createRoomView, alt: 'createRoomView'},
     ],
     column_2: [
-        {image: searchLandingPage, alt: '{{GALLERY_ALT_2}}'},
-        // ...ajoute d’autres images si besoin
+        {image: mobileView, alt: 'mobileView'},
+        {image: profilePageView, alt: 'profilePageView'},
+        {image: inGameView, alt: 'inGameView'},
     ]
 }
 
@@ -86,8 +105,9 @@ const gallery: GalleryData = {
 const presentationData: ProjectPresentationData = {
     textComponent: (
         <div className="text-md text-justify leading-relaxed">
-            <p>
-                « Who Am I game » est une application web temps réel inspirée du jeu de société classique « Guess Who? ».
+            <div>
+                « Who Am I game » est une application web temps réel inspirée du jeu de société classique « Guess Who?
+                ».
                 <br/>
                 Objectif : permettre à deux joueurs de s’affronter en ligne via une interface interactive et responsive.
                 Le projet a été conçu pour allier réactivité, expérience utilisateur fluide et infrastructure DevOps
@@ -106,21 +126,21 @@ const presentationData: ProjectPresentationData = {
                 L’état de l’application est décentralisé et plusieurs salons peuvent être joués en parallèle, permettant
                 à chaque joueur de suivre l’avancement, de voir qui est connecté, ainsi que les questions posées et les
                 réponses données.
-            </p>
+            </div>
         </div>
     ),
     sources: [
         {
-            icon: <BoltIcon className="h-4 w-4 text-yellow-400"/>,
-            label: "{{SOURCE_1_LABEL}}",
-            link: "{{SOURCE_1_LINK}}",
-            description: "{{SOURCE_1_DESCRIPTION}}"
+            icon: <BoltIcon className="text-yellow-400" width={16} height={16}/>,
+            label: "Fast try",
+            link: "https://gitlab.com/projects-and-chill/who-am-i/docker-env-who-am-i",
+            description: "Easy try avec docker"
         },
         {
             icon: <Image src={gitlabLogo} alt="GitLab" width={16} height={16}/>,
-            label: "{{SOURCE_2_LABEL}}",
-            link: "{{SOURCE_2_LINK}}",
-            description: "{{SOURCE_2_DESCRIPTION}}"
+            label: "Gitlab",
+            link: "https://gitlab.com/projects-and-chill/who-am-i",
+            description: "Racine du projet"
         },
     ]
 };
@@ -129,14 +149,16 @@ const presentationData: ProjectPresentationData = {
 
 const projectStackData: ProjectStackData = {
     core_skills: [
-        {name: '{{CORE_SKILL_1}}', level: 90, description: "{{CORE_SKILL_1_DESC}}"},
-        {name: '{{CORE_SKILL_2}}', level: 80, description: "{{CORE_SKILL_2_DESC}}"},
-        // ...
+        {name: 'TypeScript', level: 90, description: "Language"},
+        {name: 'React', level: 85, description: "Frontend"},
+        {name: 'Socket.IO', level: 80, description: "WebSocket"},
+        {name: 'MongoDb', level: 75, description: "Database"},
     ],
     specialized_skills: [
-        {name: '{{SPEC_SKILL_1}}', level: 90},
-        {name: '{{SPEC_SKILL_2}}', level: 70},
-        // ...
+        {name: 'Architecture temps réel', level: 80},
+        {name: 'Docker', level: 75},
+        {name: 'CI/CD (GitLab)', level: 70},
+        {name: 'Terraform', level: 60},
     ],
 }
 
@@ -144,59 +166,81 @@ const projectStackData: ProjectStackData = {
 
 const features: Feature[] = [
     {
-        icon: UserGroupIcon,
-        name: '{{FEATURE_1_NAME}}',
-        description: "{{FEATURE_1_DESCRIPTION}}",
-        tags: ['{{TAG_A}}', '{{TAG_B}}', '{{TAG_C}}'],
+        icon: WifiIcon,
+        name: "Temps réel via WebSocket",
+        description: "Gestion complète de la logique interactive du jeu via Socket.IO : questions/réponses, progression, synchronisation. Chaque joueur rejoint un salon via un canal dédié ; les événements sont nommés, typés et organisés autour du cycle de vie de la partie.",
+        tags: ['Socket.IO', 'Rooms', 'Events typés'],
         feature_type: 'Backend',
     },
     {
-        icon: PaintbrushIcon,
-        name: '{{FEATURE_2_NAME}}',
-        description: "{{FEATURE_2_DESCRIPTION}}",
-        tags: ['{{TAG_D}}', '{{TAG_E}}'],
+        icon: CircleStackIcon,
+        name: "API REST de gestion",
+        description: "Endpoints REST pour les opérations classiques : création/suppression de salons, récupération de l’état de la partie, enregistrement de profils/scores. Coexiste avec le WebSocket et partage la même base MongoDB.",
+        tags: ['REST API', 'MongoDB', 'Room management'],
+        feature_type: 'Backend',
+    },
+    {
+        icon: UserIcon,
+        name: "Interface de connexion",
+        description: "Choix d’un pseudo, création ou connexion à un salon existant via une interface simple et rapide.",
+        tags: ['Login', 'Rooms', 'UX'],
         feature_type: 'Frontend',
     },
-    // ...ajoute d’autres features si besoin
+    {
+        icon: PaintBrushIcon,
+        name: "Vue de jeu interactive",
+        description: "Affichage des actions de jeu en temps réel avec feedback visuel clair sur les questions, réponses et choix des joueurs.",
+        tags: ['UI', 'Realtime', 'Feedback'],
+        feature_type: 'Frontend',
+    },
+    {
+        icon: ArrowPathIcon,
+        name: "Synchronisation des événements",
+        description: "Tous les événements joueurs (questions, réponses, fin de partie) sont propagés instantanément à l’ensemble des participants via WebSocket.",
+        tags: ['WebSocket', 'Sync', 'Events'],
+        feature_type: 'Backend',
+    },
+    {
+        icon: AdjustmentsHorizontalIcon,
+        name: "Gestion d’état du jeu",
+        description: "State management basé sur l’état courant de la partie : lobby, en jeu, fin de partie, transitions sécurisées.",
+        tags: ['State', 'Game lifecycle', 'Consistency'],
+        feature_type: 'Frontend',
+    },
+    {
+        icon: ExclamationTriangleIcon,
+        name: "Gestion des erreurs et états spéciaux",
+        description: "Prise en charge des cas limites : reconnexion automatique, joueur manquant, abandon, fin de partie et erreurs réseau.",
+        tags: ['Resilience', 'Reconnection', 'Edge cases'],
+        feature_type: 'Backend',
+    },
+    {
+        icon: BoltIcon,
+        name: "CI/CD GitLab automatisé",
+        description: "Pipeline CI/CD complet via GitLab : lint, tests, build, création d’images Docker et déploiement automatisé sur AWS selon la branche (staging / main), avec variables chiffrées et accès sécurisés.",
+        tags: ['GitLab CI', 'Docker', 'AWS'],
+        feature_type: 'DevOps',
+    },
+    {
+        icon: WrenchScrewdriverIcon,
+        name: "Infrastructure as Code (Terraform)",
+        description: "Infrastructure AWS entièrement pilotée par Terraform : ECS, EC2, Load Balancer, S3, base de données, VPC et security groups. Environnements reproductibles et versionnés.",
+        tags: ['Terraform', 'AWS', 'IaC'],
+        feature_type: 'DevOps',
+    },
+    {
+        icon: RocketLaunchIcon,
+        name: "Environnements de staging",
+        description: "Workflow GitLab Flow avec environnement de staging déployé automatiquement, pour des mises en production sécurisées.",
+        tags: ['GitLab Flow', 'Staging', 'Production'],
+        feature_type: 'DevOps',
+    },
 ];
 
-/* ----------------------- [PINNED PROJECT] SECTION -----------------------------*/
-const projectMainPicture = searchLandingPage
-
-const pinToLandingPage: PinnedProject = {
-    title: heroSectionData.title,
-    smallDescription: heroSectionData.subtitle_description,
-    image: projectMainPicture,
-    slug: slug,
-    bulletPointParagraphs: [
-        {
-            paragraphTitle: "Frontend",
-            bulletsPoints: [
-                "{{very short key achivment 1}}", //Ca doit tenir sur 5 mots clés maxi par ligne.
-                "{{very short key achivment 2}}",
-                "{{very short key achivment 3}}",
-            ]
-        },
-        {
-            paragraphTitle: "Backend Systems",
-            bulletsPoints: [
-                "{{very short key achivment 1}}",
-                "{{very short key achivment 2}}",
-                "{{very short key achivment 3}}",
-            ]
-        },
-        {
-            paragraphTitle: "Key Achievements",
-            bulletsPoints: [
-                "{{very short global key achivment 1}}",
-                "{{very short global key achivment 2}}",
-                "{{very short global key achivment 3}}",
-            ]
-        }
-    ]
-}
-
 /* ----------------------- [PROJECT CAROUSEL] SECTION -----------------------------*/
+
+const projectMainPicture = lobbyView
+
 const projectPreview: ProjectPreview = {
     slug: slug,
     title: heroSectionData.title,
@@ -205,38 +249,121 @@ const projectPreview: ProjectPreview = {
     technicalTag: heroSectionData.technical_tags,
     view_project_button: {
         label: "Voir projet",
-        link: "{{link}}"
+        link: `/projet/${slug}`
     },
     button_2: {
         label: "Gitlab",
-        link: "{{link}}"
+        link: "https://gitlab.com/projects-and-chill/who-am-i"
     },
 }
 
 /* ----------------------- [TECHNICAL CHALLENGES] SECTION -----------------------------*/
 const technicalChallenges: TechnicalChallengeData[] = [
     {
-        scopeTitle: '{{CHALLENGE_SCOPE_1_TITLE}}',
-        scopeDescription: "{{CHALLENGE_SCOPE_1_DESC}}",
-        icon: DatabaseBackupIcon,
+        scopeTitle: 'Backend',
+        scopeDescription: (
+            <p>
+                Le backend de Who Am I game est le moteur de l’application. Il orchestre toute la logique de jeu, gère
+                l’état de la partie en temps réel et assure une communication fluide entre les joueurs.
+                <br/> <br/>
+                Construit autour de WebSockets pour une interaction instantanée, il s’appuie sur une architecture
+                event-driven robuste avec une stack moderne.
+            </p>),
+        icon: ServerIcon,
         challengesList: [
-            "{{CHALLENGE_1_ITEM_1}}",
-            "{{CHALLENGE_1_ITEM_2}}",
-            "{{CHALLENGE_1_ITEM_3}}",
-            // ...
+            "Temps réel robuste malgré latence et refresh",
+            "Reconnexion automatique avec du state recovery",
+            "API WebSocket claire, documentée et typée",
+            "Cohérence WebSocket / REST sans logique dupliquée",
+            "Interfaces partagées client <->",
         ],
     },
     {
-        scopeTitle: '{{CHALLENGE_SCOPE_2_TITLE}}',
-        scopeDescription: "{{CHALLENGE_SCOPE_2_DESC}}",
-        icon: ArrowPathIcon,
+        scopeTitle: 'Frontend',
+        scopeDescription: (
+            <p>
+                Le frontend de Who Am I game est conçu comme une application React modulaire, organisée autour des
+                entités du jeu : joueurs, équipes, règles, scores, etc.
+                <br/><br/>
+                L’interface permet à un joueur de saisir un mot secret pendant que les autres posent des questions pour
+                le deviner, dans un environnement entièrement temps réel. L’ensemble repose sur un state management
+                centralisé et une communication WebSocket efficace via un module dédié.
+            </p>),
+        icon: CloudIcon,
         challengesList: [
-            "{{CHALLENGE_2_ITEM_1}}",
-            "{{CHALLENGE_2_ITEM_2}}",
-            // ...
+          "Client-side real-time state synchronisation",
+          "Dynamic game map rendering",
+          "UI components organisation et réutilisabilité",
+          "WebSocket error handling et fallback states",
+        ],
+    },
+    {
+        scopeTitle: 'DevOps',
+        scopeDescription: (
+            <p>
+                Le composant <strong>DevOps</strong> de <em>Who Am I game</em> a été conçu pour garantir une <strong>expérience
+                développeur fluide</strong> et des <strong>déploiements rapides et sécurisés</strong>.
+                <br/><br/>
+                Un système de <strong>versioning automatique</strong> génère des versions claires et cohérentes avec le
+                cycle de développement.
+                <br/><br/>
+                Chaque release est <strong>automatique, traçable et stable</strong>, de la phase code jusqu’à la
+                production, tout en assurant la scalabilité long terme de l’infrastructure.
+            </p>
+        ),
+        icon: PaintBrushIcon,
+        challengesList: [
+          "CI/CD full automatisé: lint, tests, Docker build, push registry, deploy Terraform",
+          "Staging auto depuis `develop`, isolé prod, promos via `main`",
+          "Versioning auto via semantic-release + Conventional Commits",
+          "AWS IaC Terraform : ECS, VPC, ALB, S3 reproductibles",
         ],
     },
 ];
+
+
+/* ----------------------- [PINNED PROJECT] SECTION -----------------------------*/
+
+const pinToLandingPage: PinnedProject = {
+    title: heroSectionData.title,
+    smallDescription: heroSectionData.short_app_description,
+    image: projectMainPicture,
+    slug: slug,
+    bulletPointParagraphs: [
+        {
+            paragraphTitle: "Frontend",
+            bulletsPoints: [
+                "Real-time React UI",
+                "WebSocket state sync",
+                "Responsive multi-role UX",
+            ]
+        },
+        {
+            paragraphTitle: "Backend Systems",
+            bulletsPoints: [
+                "Socket.IO rooms scalable",
+                "Event-driven game engine",
+                "State recovery & resilience",
+            ]
+        },
+        {
+            paragraphTitle: "DevOps",
+            bulletsPoints: [
+                "GitLab CI/CD prod-ready",
+                "Terraform AWS IaC",
+                "semantic-release versioning",
+            ]
+        },
+        {
+            paragraphTitle: "Key Achievements",
+            bulletsPoints: [
+                "<30ms latency",
+                "1k+ concurrent users",
+                "99.9% uptime",
+            ]
+        }
+    ]
+}
 
 
 export const whoAmIGameFullData: FullProjectData = {

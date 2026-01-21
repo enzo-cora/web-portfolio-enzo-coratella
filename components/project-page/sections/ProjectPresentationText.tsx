@@ -52,7 +52,7 @@ export function ProjectPresentationText(props: { presentation: ProjectPresentati
                                 rel="noopener noreferrer"
                                 className="inline-flex mb-2 items-center justify-center flex-col gap-0.5 px-3 py-1.5 text-sm font-medium rounded-full border transition hover:opacity-80 w-full max-w-[200px]"
                             >
-                                <span className="inline-flex items-center gap-2">  {source.icon} {source.label} </span>
+                                <span className="inline-flex items-center gap-2 whitespace-nowrap">{source.icon} {source.label}</span>
                                 <span className="text-xs font-normal opacity-70">{source.description}</span>
                             </a>
                         ))}

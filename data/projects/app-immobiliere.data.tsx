@@ -110,7 +110,7 @@ const presentationData: ProjectPresentationData = {
     ),
     sources: [
         {
-            icon: <BoltIcon className="h-4 w-4 text-yellow-400" />,
+            icon: <BoltIcon className="text-yellow-400" width={16} height={16} />,
             label: "Fast try",
             link: "https://gitlab.com/projects-and-chill/immobilier/docker-immo-angular",
                 description: "Easy try avec docker"

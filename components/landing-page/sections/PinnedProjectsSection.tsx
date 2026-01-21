@@ -42,9 +42,9 @@ export function PinnedProjectsSection(props: { pinnedProjects: PinnedProject[] }
                     initial={{opacity: 0}}
                     whileInView={{opacity: 1}}
                     viewport={{once: true}}
-                    className="text-xl font-bold mb-16 text-left text-purple-600 dark:text-white"
+                    className="text-xl font-bold mb-16 text-left text-gray-600 dark:text-gray-200"
                 >
-                    Mes projets à la une:
+                    A la une:
                 </motion.h3>
 
 
