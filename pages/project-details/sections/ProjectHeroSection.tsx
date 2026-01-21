@@ -2,11 +2,12 @@
 
 import {useTheme} from "@/app/theme/ThemeProvider";
 import {IconComponent} from "@/pages/types/utils";
+import {TechnicalTags} from "@/pages/project-details/types";
 
 
 export type ProjectHeroSectionData = {
     title: string,
-    technical_tags: string[],
+    technical_tags: TechnicalTags[],
     subtitle_description: string,
     short_app_description: string,
     impact_metrics: Array<{

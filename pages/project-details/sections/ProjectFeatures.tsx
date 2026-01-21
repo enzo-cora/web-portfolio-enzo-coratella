@@ -12,22 +12,6 @@ export interface Feature {
     feature_type: 'backend' | 'frontend' | 'architecture' | 'fullstack' | 'devops'
 }
 
-/*const features: Feature[] = [
-    {
-        icon: RocketLaunchIcon,
-        name: 'FitTracker Pro',
-        description: 'A comprehensive fitness tracking app with real-time workout monitoring',
-        tags: ['Backend', 'Frontend', 'Fullstack'],
-        feature_type: 'backend',
-    },
-    {
-        icon: AccessibilityIcon,
-        name: 'CryptoWatch',
-        description: 'Real-time cryptocurrency tracking and portfolio management',
-        tags: ['Flutter', 'Dart', 'Firebase'],
-        feature_type: 'backend'
-    },
-];*/
 
 
 export const ProjectFeatures = (props: {features: Feature[]}) => {

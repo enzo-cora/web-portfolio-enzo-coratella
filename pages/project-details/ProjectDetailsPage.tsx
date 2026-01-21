@@ -10,13 +10,13 @@ import {ProjectPresentationText} from "@/pages/project-details/sections/ProjectP
 import {notFound} from "next/dist/client/components/not-found";
 import {projectDataList} from "@/pages/project-details/data/list-projects.data";
 import Link from "next/link";
+import {Slugs} from "@/pages/project-details/data/slugs";
 
 
-export function ProjectDetailsPage(props: { slug: string }) {
+export function ProjectDetailsPage(props: { slug: Slugs }) {
 
     const projectData = projectDataList.find(project => project.slug === props.slug)
     if (!projectData) {
-        console.log('Project not found')
         return notFound();
     }
     return (

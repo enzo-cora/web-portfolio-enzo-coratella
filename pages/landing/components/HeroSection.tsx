@@ -1,7 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import {motion} from 'framer-motion';
+import {useState} from 'react';
 import Image from "next/image";
 import enzo_photo from "@/public/enzo_photo.jpeg"
 
@@ -37,7 +37,7 @@ export function HeroSection() {
 						</h1>
 						<h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white">Senior Software Engineer </h2>
 						<p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                            Software engineer avec <b>{experienceYears}+ ans d’expérience</b>, je conçois des solutions web scalables de bout en bout et aide à structurer des équipes techniques.
+                            Avec <b>{experienceYears}+ ans d’expérience</b> dans la conception de solutions web scalables de bout en bout, j’accompagne la structuration d’équipes techniques.
 						</p>
 						<p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto">
 							Senior software engineer chez <span className="text-blue-600 dark:text-blue-400">Hermes Digital</span> et ancien backend developer en fintech chez <span className="text-purple-600 dark:text-purple-400">Bridge</span>

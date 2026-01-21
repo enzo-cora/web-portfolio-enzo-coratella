@@ -12,13 +12,15 @@ import Image from "next/image";
 import {TechnicalChallengeData} from "@/pages/project-details/sections/ProjectTechnicalChallenges";
 import {ProjectStackData} from "@/pages/project-details/sections/ProjectStackSection";
 import {ProjectHeroSectionData} from "@/pages/project-details/sections/ProjectHeroSection";
-import {ProjectFullPageData} from "@/pages/project-details/types";
-
+import {FullProjectData} from "@/pages/project-details/types";
+import {Slugs} from "@/pages/project-details/data/slugs";
+import {ProjectPreview} from "@/pages/landing/components/project-list-section/project-preview.type";
+import {PinnedProject} from "@/pages/landing/components/PinnedProjectsSection";
 /* ----------------------- [HERO DATA] SECTION -----------------------------*/
 
 const heroSectionData: ProjectHeroSectionData = {
     title: "Crypto Arbitrage",
-    technical_tags: ["Backend", "Fullstack", "Architecture", "DevOps", "Cloud"],
+    technical_tags: ["Backend", "Fullstack"],
     subtitle_description: "Automated crypto trading and web admin panel",
     short_app_description: "Application backoffice centralisant la gestion des annonces et des demandes clients, pour les agences immobilières de la fnaim.",
     impact_metrics: [
@@ -65,6 +67,7 @@ const heroSectionData: ProjectHeroSectionData = {
         featuresPills: ['Cross-Platform', 'Real-time Sync', 'Offline Mode'],
     },
 }
+
 
 const gallery: GalleryData = {
     column_1: [
@@ -154,6 +157,61 @@ const features: Feature[] = [
     },
 ];
 
+/* ----------------------- [PINNED PROJECT] SECTION -----------------------------*/
+const projectMainPicture = searchLandingPage
+
+const pinToLandingPage: PinnedProject = {
+    title: heroSectionData.title,
+    smallDescription: heroSectionData.subtitle_description,
+    imageSrc: projectMainPicture,
+    slug: Slugs.immobilier,
+    bulletPointParagraphs: [
+        {
+            paragraphTitle: "Frontend Architecture",
+            bulletsPoints: [
+                "Next.js Server Components",
+                "Real-time Cart & Inventory",
+                "Stripe Payment Integration",
+                "PWA with Offline Support"
+            ]
+        },
+        {
+            paragraphTitle: "Backend Systems",
+            bulletsPoints: [
+                "Node.js Microservices",
+                "Redis Caching Layer",
+                "Kafka Event Streaming",
+                "Elasticsearch Product Search"
+            ]
+        },
+        {
+            paragraphTitle: "Key Achievements",
+            bulletsPoints: [
+                "99.99% Uptime with Blue-Green Deployment",
+                "300ms Average API Response Time",
+                "45% Reduction in Infrastructure Costs"
+            ]
+        }
+    ]
+}
+
+/* ----------------------- [PROJECT CAROUSEL] SECTION -----------------------------*/
+const projectPreview : ProjectPreview = {
+    slug: Slugs.cryptoArbitrage,
+    title: heroSectionData.title,
+    description: heroSectionData.subtitle_description,
+    image: projectMainPicture,
+    technicalTag: heroSectionData.technical_tags,
+    button_1: {
+        label: "Voir projet",
+        link: "https://github.com/tailwindlabs/heroicons"
+    },
+    button_2: {
+        label: "Gitlab",
+        link: "https://docs.gitlab.com/ci/"
+    },
+}
+
 /* ----------------------- [TECHNICAL CHALLENGES] SECTION -----------------------------*/
 const technicalChallenges: TechnicalChallengeData[] = [
     {
@@ -181,12 +239,14 @@ const technicalChallenges: TechnicalChallengeData[] = [
 ];
 
 
-export const immobilierFullData: ProjectFullPageData = {
-    slug: 'immobilier-app',
+export const immobilierFullData: FullProjectData = {
+    slug: Slugs.immobilier,
     heroSectionData,
     gallery,
     presentation: presentationData,
     stack: projectStackData,
     features: features,
-    technicalChallenges
+    technicalChallenges,
+    projectPreview,
+    pinToLandingPage,
 }

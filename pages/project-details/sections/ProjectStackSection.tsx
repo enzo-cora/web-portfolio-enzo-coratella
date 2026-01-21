@@ -39,7 +39,7 @@ export const ProjectStackSection = (props: {stack: ProjectStackData}) => {
             <div className="container mx-auto px-4">
                 <h2 className={`text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-center ${theme === 'dark' ? '' : 'text-gray-900'}`}>Stack du projet</h2>
                 <p className={`text-sm sm:text-base text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                    Des outils de développement adaptés aux besoins
+                    Vue d’ensemble des technologies, outils et standards techniques utilisés dans le cadre du projet
                 </p>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-5xl mx-auto">

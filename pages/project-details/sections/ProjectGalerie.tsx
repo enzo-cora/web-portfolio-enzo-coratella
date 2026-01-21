@@ -14,17 +14,6 @@ export type GalleryData = {
     }>,
 };
 
-/*const gallery: GalleryData = {
-    column_1: [
-        {imageSrc: fullPagescrolling.src, alt: 'Full page scrolling'}
-    ],
-    column_2: [
-        {imageSrc: searchLandingPage.src, alt: 'Recherche - landing page'},
-        {imageSrc: phoneVersion.src, alt: 'Version mobile'},
-        {imageSrc: houseInfo.src, alt: 'Fiche du bien'}
-    ]
-}*/
-
 export const ProjectGalerie = (props: { gallery: GalleryData }) => {
     const {theme = 'light'} = useTheme();
     const {gallery} = props;

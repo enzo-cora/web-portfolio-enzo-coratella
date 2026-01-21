@@ -3,72 +3,18 @@
 import {motion} from 'framer-motion';
 import {useCallback, useEffect, useState} from 'react';
 import useEmblaCarousel from "embla-carousel-react";
-import {Project, Tags} from "@/pages/landing/components/project-list-section/types/project.type";
+import {ProjectPreview} from "@/pages/landing/components/project-list-section/project-preview.type";
 import {ProjectCard} from "@/pages/landing/components/project-list-section/ProjectCard";
+import {technicalTags, TechnicalTags} from "@/pages/project-details/types";
 
 
-const filters: Array<Tags | 'Tous'> = ['Tous', 'Backend', 'Fullstack', 'Architecture', 'DevOps']
+const filters: Array<TechnicalTags | 'Tous'> = ['Tous', ...technicalTags, ]
 
-const projects: Array<Project> = [
-    {
-        id: 1,
-        title: 'E-Commerce Platform',
-        description: 'A modern e-commerce platform built with Next.js and Stripe',
-        image: '/code.jpg',
-        tags: ['Backend', "Fullstack"],
-    },
-    {
-        id: 2,
-        title: 'AI Chat Application',
-        description: 'Real-time chat application powered by OpenAI',
-        image: '/laptop.jpg',
-        tags: ['Fullstack'],
-    },
-    {
-        id: 3,
-        title: 'Task Management',
-        description: 'Collaborative task management tool with real-time updates',
-        image: '/code.jpg',
-        tags: ['Architecture'],
-    },
-    {
-        id: 4,
-        title: 'Portfolio Generator',
-        description: 'Dynamic portfolio generator for developers',
-        image: '/laptop.jpg',
-        tags: ['DevOps'],
-    },
-    {
-        id: 5,
-        title: 'E-Commerce Platform',
-        description: 'A modern e-commerce platform built with Next.js and Stripe',
-        image: '/code.jpg',
-        tags: ['Backend'],
-    },
-    {
-        id: 6,
-        title: 'AI Chat Application',
-        description: 'Real-time chat application powered by OpenAI',
-        image: '/laptop.jpg',
-        tags: ['Fullstack'],
-    },
-    {
-        id: 7,
-        title: 'Task Management',
-        description: 'Collaborative task management tool with real-time updates',
-        image: '/code.jpg',
-        tags: ['Architecture'],
-    },
-    {
-        id: 8,
-        title: 'Portfolio Generator',
-        description: 'Dynamic portfolio generator for developers',
-        image: '/laptop.jpg',
-        tags: ['DevOps'],
-    },
-];
 
-export function ProjectList() {
+export function ProjectList(props: { projectsPreview: ProjectPreview[] }) {
+
+    const projects = props.projectsPreview
+
     const [emblaRef, emblaApi] = useEmblaCarousel({
         align: 'start',
         containScroll: 'trimSnaps',
@@ -77,12 +23,12 @@ export function ProjectList() {
     });
 
     const [itemsPerSlide, setItemsPerSlide] = useState(4);
-    const [activeFilter, setActiveFilter] = useState<Tags | 'Tous'>('Tous');
+    const [activeFilter, setActiveFilter] = useState<TechnicalTags | 'Tous'>('Tous');
 
 
     const filteredProjects = activeFilter === 'Tous'
         ? projects
-        : projects.filter((project) => project.tags.includes(activeFilter));
+        : projects.filter((project) => project.technicalTag.includes(activeFilter));
 
     const slides = Array.from({length: Math.ceil(filteredProjects.length / itemsPerSlide)}, (_, i) =>
         filteredProjects.slice(i * itemsPerSlide, i * itemsPerSlide + itemsPerSlide)
@@ -174,7 +120,7 @@ export function ProjectList() {
                                 >
                                     {group.map((project) => (
                                         /* Card */
-                                        <ProjectCard key={project.id} project={project} />
+                                        <ProjectCard key={project.slug} project={project}/>
                                     ))}
                                 </div>
                             </div>

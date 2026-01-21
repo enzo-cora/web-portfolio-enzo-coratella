@@ -39,7 +39,7 @@ export function ProjectPresentationText(props: { presentation: ProjectPresentati
                 <aside
                     className={`${theme === 'dark' ? 'bg-gradient-to-b bg-zinc-900 border-white' : 'bg-white border-gray-200'} border rounded-xl p-5 mx-auto w-full md:min-w-[220px] md:w-auto max-w-sm shadow-sm`}>
                     <h3 className={`text-xs uppercase tracking-wider mb-3 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                        Sources
+                        Resources
                     </h3>
                     <div className="flex flex-col gap-2">
                         {presentation.sources.map((source, i) => (

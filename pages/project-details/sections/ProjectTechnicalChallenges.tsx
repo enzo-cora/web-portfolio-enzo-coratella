@@ -52,7 +52,7 @@ export const ProjectTechnicalChallenges = (props: { technicalChallenges: Technic
                 <h2 className={`text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-center ${theme === 'dark' ? '' : 'text-gray-900'}`}>Challenges
                     techniques du projet</h2>
                 <p className={`text-sm sm:text-base text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                    Voici la liste des challenges du projet par métier.
+                    Panorama des défis techniques qui ont influencé les choix d’architecture, d’organisation et de delivery du projet
                 </p>
 
                 <div className="max-w-6xl mx-auto">

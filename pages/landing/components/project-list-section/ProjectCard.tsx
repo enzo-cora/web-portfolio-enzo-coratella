@@ -3,21 +3,21 @@
 import {motion} from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import {Project} from "@/pages/landing/components/project-list-section/types/project.type";
+import {ProjectPreview} from "@/pages/landing/components/project-list-section/project-preview.type";
 
 
-export function ProjectCard( props: { project: Project }) {
+export function ProjectCard(props: { project: ProjectPreview }) {
 
-    const { project } = props
+    const {project} = props
 
     return (
         <div className="relative cursor-pointer">
             <motion.div
-                key={project.id}
+                key={project.slug}
                 initial={{opacity: 0, y: 20}}
                 whileInView={{opacity: 1, y: 0}}
                 viewport={{once: true}}
-                transition={{duration: 0.6, delay: project.id * 0.1}}
+                transition={{duration: 0.6, delay: 0.3}}
                 whileHover={{scale: 1.02}}
             >
                 <div
@@ -34,18 +34,28 @@ export function ProjectCard( props: { project: Project }) {
                         <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
                         <p className="text-gray-200 mb-4 line-clamp-2">{project.description}</p>
                         <div className="flex gap-4">
-                            <Link
-                                href="#"
-                                className="text-sm px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full transition-all duration-300 backdrop-blur-sm"
-                            >
-                                View Project
-                            </Link>
-                            <Link
-                                href="#"
-                                className="text-sm px-4 py-2 bg-white hover:bg-gray-100 text-gray-900 rounded-full transition-all duration-300 backdrop-blur-sm"
-                            >
-                                GitHub
-                            </Link>
+                            {project.button_1 &&
+                                <Link
+                                    href={project.button_1.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full transition-all duration-300 backdrop-blur-sm"
+                                >
+                                    {project.button_1.label}
+                                </Link>
+                            }
+
+                            {project.button_2 &&
+                                <Link
+                                    href={project.button_2.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm px-4 py-2 bg-white hover:bg-gray-100 text-gray-900 rounded-full transition-all duration-300 backdrop-blur-sm"
+                                >
+                                    {project.button_2.label}
+                                </Link>
+                            }
+
                         </div>
                     </div>
                 </div>
