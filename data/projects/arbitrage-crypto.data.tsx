@@ -14,8 +14,8 @@ import {ProjectStackData} from "@/components/project-page/sections/ProjectStackS
 import {ProjectHeroSectionData} from "@/components/project-page/sections/ProjectHeroSection";
 import {FullProjectData} from "@/components/project-page/types";
 import {Slugs} from "@/data/slugs";
-import {ProjectPreview} from "@/components/landing-page/components/project-list-section/project-preview.type";
-import {PinnedProject} from "@/components/landing-page/components/PinnedProjectsSection";
+import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/project-preview.type";
+import {PinnedProject} from "@/components/landing-page/sections/PinnedProjectsSection";
 /* ----------------------- [HERO DATA] SECTION -----------------------------*/
 
 const heroSectionData: ProjectHeroSectionData = {

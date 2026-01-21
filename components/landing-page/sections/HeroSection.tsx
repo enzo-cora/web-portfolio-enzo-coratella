@@ -4,6 +4,8 @@ import {motion} from 'framer-motion';
 import {useState} from 'react';
 import Image from "next/image";
 import enzo_photo from "@/public/enzo_photo.jpeg"
+import {LinkedinButton} from "@/components/buttons/linkedin-button";
+import {GitlabButton} from "@/components/buttons/gitlab-button";
 
 
 export function HeroSection() {
@@ -158,6 +160,12 @@ export function HeroSection() {
 							</div>
 						</div>
 					</motion.div>
+
+					<aside className="mt-16 mb flex items-center justify-center gap-8 text-gray-600 dark:text-gray-400">
+						<LinkedinButton />
+						<GitlabButton />
+					</aside>
+
 				</div>
 			</div>
 		</section>
