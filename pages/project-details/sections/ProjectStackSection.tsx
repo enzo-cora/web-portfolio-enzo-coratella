@@ -1,9 +1,7 @@
-'use client';
-
 import {useTheme} from "@/app/theme/ThemeProvider";
 
 
-type ProjectSkillsData = {
+export type ProjectStackData = {
     core_skills: Array<{
         name: string;
         level: number;
@@ -15,30 +13,32 @@ type ProjectSkillsData = {
     }>;
 }
 
-const projectSkills: ProjectSkillsData = {
-    core_skills: [
-        {name: 'Typescript', level: 95, description: "Backend"},
-        {name: 'MongoDb', level: 90, description: "Document DB"},
-        {name: 'AWS', level: 85, description: "Scalability"},
-        {name: 'React', level: 80, description: "Frontend"},
-    ],
-    specialized_skills: [
-        {name: 'Kotlin', level: 85},
-        {name: 'Flutter', level: 80},
-        {name: 'Firebase', level: 88},
-        {name: 'App Store Optimization', level: 85},
-    ],
-}
 
-export const ProjectSkillsSection = () => {
+export const ProjectStackSection = (props: {stack: ProjectStackData}) => {
     const {theme} = useTheme();
+    const {stack} = props
+
+    const colors = [
+        theme === 'dark'
+            ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
+            : 'bg-blue-100 text-blue-600 border border-blue-200',
+        theme === 'dark'
+            ? 'bg-orange-500/10 text-orange-400 border border-orange-500/20'
+            : 'bg-orange-100 text-orange-600 border border-orange-200',
+        theme === 'dark'
+            ? 'bg-green-500/10 text-green-400 border border-green-500/20'
+            : 'bg-green-100 text-green-600 border border-green-200',
+        theme === 'dark'
+            ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20'
+            : 'bg-purple-100 text-purple-600 border border-purple-200'
+    ]
 
     return (
         <section className="py-16 md:py-20 relative">
             <div className="container mx-auto px-4">
                 <h2 className={`text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-center ${theme === 'dark' ? '' : 'text-gray-900'}`}>Stack du projet</h2>
                 <p className={`text-sm sm:text-base text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                    Des technologies et frameworks de développement modernes
+                    Des outils de développement adaptés aux besoins
                 </p>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-5xl mx-auto">
@@ -52,23 +52,7 @@ export const ProjectSkillsSection = () => {
                             </svg>
                             Core Stack
                         </h3>
-                        {projectSkills.core_skills.map((skill, index) => {
-
-                            const colors = [
-                                theme === 'dark'
-                                    ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
-                                    : 'bg-blue-100 text-blue-600 border border-blue-200',
-                                theme === 'dark'
-                                    ? 'bg-orange-500/10 text-orange-400 border border-orange-500/20'
-                                    : 'bg-orange-100 text-orange-600 border border-orange-200',
-                                theme === 'dark'
-                                    ? 'bg-green-500/10 text-green-400 border border-green-500/20'
-                                    : 'bg-green-100 text-green-600 border border-green-200',
-                                theme === 'dark'
-                                    ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20'
-                                    : 'bg-purple-100 text-purple-600 border border-purple-200'
-                            ]
-
+                        {stack.core_skills.map((skill, index) => {
                             return (
                                 <div key={skill.name} className="group relative">
                                     <div className="flex flex-wrap sm:flex-nowrap justify-between mb-2 gap-2">
@@ -110,9 +94,8 @@ export const ProjectSkillsSection = () => {
                                             <p className={`font-medium ${theme === 'dark' ? '' : 'text-gray-900'}`}>{skill.name}</p>
                                             <div
                                                 className={`space-y-1 text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                                                <p>• {skill.level}% Proficiency</p>
-                                                <p>• {skill.level > 90 ? 'Expert' : skill.level > 80 ? 'Advanced' : 'Intermediate'} Level</p>
-                                                <p>• {Math.round(skill.level / 10)} Years Experience</p>
+                                                <p>• {skill.level}% d&#39;utilisation </p>
+                                                <p>• Utilisation {skill.level > 90 ? 'Majeur' : skill.level > 60 ? 'Significative' : 'Mineur'} </p>
                                             </div>
                                         </div>
                                     </div>
@@ -132,7 +115,7 @@ export const ProjectSkillsSection = () => {
                             Skills secondaires
                         </h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            {projectSkills.specialized_skills.map((skill) => (
+                            {stack.specialized_skills.map((skill) => (
                                 <div
                                     key={skill.name}
                                     className={`group backdrop-blur-sm p-4 rounded-xl border relative overflow-hidden ${

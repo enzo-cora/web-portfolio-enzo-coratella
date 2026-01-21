@@ -103,9 +103,7 @@ export const DevelopmentProcess = () => {
 											</svg>
 										</div>
 										<h3
-											className={`text-xl font-semibold mb-3 text-center transition-colors ${process.colorClasses.text} ${
-												theme === 'dark' ? '' : 'text-gray-900'
-											}`}
+											className={`text-xl font-semibold mb-3 text-center transition-colors ${process.colorClasses.text}`}
 										>
 											{process.title}
 										</h3>

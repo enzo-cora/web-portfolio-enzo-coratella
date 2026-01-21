@@ -1,141 +1,118 @@
-'use client';
-
 import {useTheme} from "@/app/theme/ThemeProvider";
 import React from "react";
+import {IconComponent} from "@/pages/types/utils";
 
-interface TechnicalChallengeData {
-	scope: string; //Backend / Frontend / ...
-	description: string
-	colorClasses: {
-		bg: string;
-		text: string;
-		gradientFrom: string;
-		gradientTo: string;
-		hoverBorder: string;
-	};
-	icon: React.ReactNode;
-	steps: string[];
+export interface TechnicalChallengeData {
+    scope: string; //Backend / Frontend / ...
+    description: string
+    icon: IconComponent;
+    steps: string[];
 }
 
-export const ProjectTechnicalChallenges = () => {
-	const { theme } = useTheme();
+export const ProjectTechnicalChallenges = (props: { technicalChallenges: TechnicalChallengeData[] }) => {
+    const {theme} = useTheme();
+    const {technicalChallenges} = props
 
-	const technicalChallenges: TechnicalChallengeData[] = [
-		{
-			scope: 'Backend',
-			description: "Transactimo 's backend is based on a REST API developed in Node.js and MongoDB. The application enables seamless management of properties, users and real estate agents, while offering a matching system between offers and customer needs.",
-			colorClasses: {
-				bg: theme === 'dark' ? 'bg-blue-500/10' : 'bg-blue-100',
-				text: theme === 'dark' ? 'text-blue-400' : 'text-blue-500',
-				gradientFrom: 'from-blue-500',
-				gradientTo: 'to-purple-500',
-				hoverBorder: theme === 'dark' ? 'group-hover:border-blue-500/30' : 'group-hover:border-blue-300',
-			},
-			icon: (
-				<path
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					strokeWidth={2}
-					d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-				/>
-			),
-			steps: ['Recueil des besoins & market research', 'User flow & conception de wireframes', 'Développement de prototypes interactifs'],
-		},
-		{
-			scope: 'Frontend',
-			description: "Transactimo's front end is a web app, designed to offer a fluid experience for visitors and real estate agents alike. The interface is clear, responsive and focused on ease of use.",
-			colorClasses: {
-				bg: theme === 'dark' ? 'bg-purple-500/10' : 'bg-purple-100',
-				text: theme === 'dark' ? 'text-purple-400' : 'text-purple-600',
-				gradientFrom: 'from-purple-500',
-				gradientTo: 'to-pink-500',
-				hoverBorder: theme === 'dark' ? 'group-hover:border-purple-500/30' : 'group-hover:border-purple-300',
-			},
-			icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />,
-			steps: ['Mise en place de l’architecture & choix de la tech stack', 'Développement agile avec sprints réguliers', 'Tests continus & code reviews'],
-		},
-		{
-			scope: 'Lancement & Scaling',
-			description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley.',
-			colorClasses: {
-				bg: theme === 'dark' ? 'bg-green-500/10' : 'bg-green-100',
-				text: theme === 'dark' ? 'text-green-400' : 'text-green-600',
-				gradientFrom: 'from-green-500',
-				gradientTo: 'to-emerald-500',
-				hoverBorder: theme === 'dark' ? 'group-hover:border-green-500/30' : 'group-hover:border-green-300',
-			},
-			icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />,
-			steps: [
-				'Déploiement (CI/CD) & config infra',
-				'Observabilité: analytics, logs & monitoring',
-				'Optimisations perf/SEO & itérations produit'
-			],
-		},
-	];
+    const colors = [
+        {
+            colorClasses: {
+                bg: theme === 'dark' ? 'bg-blue-500/10' : 'bg-blue-100',
+                text: theme === 'dark' ? 'text-blue-400' : 'text-blue-500',
+                gradientFrom: 'from-blue-500',
+                gradientTo: 'to-purple-500',
+                hoverBorder: theme === 'dark' ? 'group-hover:border-blue-500/30' : 'group-hover:border-blue-300',
+            },
+        },
+        {
+            colorClasses: {
+                bg: theme === 'dark' ? 'bg-purple-500/10' : 'bg-purple-100',
+                text: theme === 'dark' ? 'text-purple-400' : 'text-purple-600',
+                gradientFrom: 'from-purple-500',
+                gradientTo: 'to-pink-500',
+                hoverBorder: theme === 'dark' ? 'group-hover:border-purple-500/30' : 'group-hover:border-purple-300',
+            },
+        },
+        {
+            colorClasses: {
+                bg: theme === 'dark' ? 'bg-green-500/10' : 'bg-green-100',
+                text: theme === 'dark' ? 'text-green-400' : 'text-green-600',
+                gradientFrom: 'from-green-500',
+                gradientTo: 'to-emerald-500',
+                hoverBorder: theme === 'dark' ? 'group-hover:border-green-500/30' : 'group-hover:border-green-300',
+            },
+        },
+    ];
 
-	return (
-		<section className="py-16 md:py-20 relative">
-			<div className="container mx-auto px-4">
-				<h2 className={`text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-center ${theme === 'dark' ? '' : 'text-gray-900'}`}>Challenges techniques du projet</h2>
-				<p className={`text-sm sm:text-base text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-					Voici la liste des challenges du projet par métier.
-				</p>
 
-				<div className="max-w-5xl mx-auto">
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 px-2">
-						{technicalChallenges.map((challenge, index) => (
-							<div key={index} className="group relative">
-								<div
-									className={`absolute inset-0 bg-gradient-to-r ${challenge.colorClasses.gradientFrom} ${challenge.colorClasses.gradientTo} rounded-2xl opacity-0 transition-opacity duration-500 ${
-										theme === 'dark' ? 'group-hover:opacity-100 blur-xl' : 'group-hover:opacity-5 blur-xl'
-									}`}
-								></div>
-								<div
-									className={`relative p-8 rounded-2xl backdrop-blur-sm border transition-colors duration-300 ${challenge.colorClasses.hoverBorder} ${
-										theme === 'dark'
-											? 'bg-gradient-to-b from-gray-800/50 to-gray-900/50 border-gray-700/50'
-											: 'bg-gradient-to-b from-white to-gray-50 border-gray-200 shadow-sm hover:shadow-md'
-									}`}
-								>
-									{/* Icon Container */}
-									<div className="mb-6">
-										<div
-											className={`w-16 h-16 ${challenge.colorClasses.bg} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
-										>
-											<svg className={`w-8 h-8 ${challenge.colorClasses.text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-												{challenge.icon}
-											</svg>
-										</div>
-										<h3
-											className={`text-xl font-semibold mb-3 text-center transition-colors ${challenge.colorClasses.text} ${
-												theme === 'dark' ? '' : 'text-gray-900'
-											}`}
-										>
-											{challenge.scope}
-										</h3>
-									</div>
+    return (
+        <section className="py-16 md:py-20 relative">
+            <div className="container mx-auto px-4">
+                <h2 className={`text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-center ${theme === 'dark' ? '' : 'text-gray-900'}`}>Challenges
+                    techniques du projet</h2>
+                <p className={`text-sm sm:text-base text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                    Voici la liste des challenges du projet par métier.
+                </p>
 
-									<p className="mb-6 text-sm" > {challenge.description}</p>
-									{/* Enum challenges*/}
-									<h3 className={`text-sm mb-6 font-semibold ${challenge.colorClasses.text}`}>Les défis techniques: </h3>
-									<div className="space-y-3">
-										{challenge.steps.map((step, stepIndex) => (
-											<div key={stepIndex} className="flex items-start gap-3">
-												<div className={`w-6 h-6 rounded-full ${challenge.colorClasses.bg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
-													<span className={`text-sm ${challenge.colorClasses.text}`}>{stepIndex + 1}</span>
-												</div>
-												<p className={`text-sm ${theme === 'dark' ? 'text-gray-400 group-hover:text-gray-300' : 'text-gray-600 group-hover:text-gray-700'}`}>
-													{step}
-												</p>
-											</div>
-										))}
-									</div>
-								</div>
-							</div>
-						))}
-					</div>
-				</div>
-			</div>
-		</section>
-	);
+                <div className="max-w-6xl mx-auto">
+                    <div
+                        className="grid gap-6 sm:gap-8 px-2 justify-center justify-items-center"
+                        style={{gridTemplateColumns: 'repeat(auto-fit, minmax(315px, 1fr))'}}
+                    >
+                        {technicalChallenges.map((challenge, index) => {
+
+                            const colorClasses = colors[index % colors.length].colorClasses
+                            return (
+                                <div key={index}
+                                     className="group relative w-full max-w-[520px] h-full justify-self-center">
+                                    <div
+                                        className={`relative h-full flex flex-col p-8 rounded-2xl backdrop-blur-sm border transition-colors duration-300 ${colorClasses.hoverBorder} ${
+                                            theme === 'dark'
+                                                ? 'bg-gradient-to-b from-gray-800/50 to-gray-900/50 border-gray-700/50'
+                                                : 'bg-gradient-to-b from-white to-gray-50 border-gray-200 shadow-sm hover:shadow-md'
+                                        }`}
+                                    >
+                                        {/* Icon Container */}
+                                        <div className="mb-6">
+                                            <div
+                                                className={`w-16 h-16 ${colors[index % colors.length].colorClasses.bg} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
+                                            >
+                                                <svg className={`w-8 h-8 ${colorClasses.text}`} fill="none"
+                                                     stroke="currentColor" viewBox="0 0 24 24">
+                                                    <challenge.icon/>
+                                                </svg>
+                                            </div>
+                                            <h3
+                                                className={`text-xl font-semibold mb-3 text-center transition-colors ${colorClasses.text}`}
+                                            >
+                                                {challenge.scope}
+                                            </h3>
+                                        </div>
+
+                                        <p className="mb-6 text-sm">{challenge.description}</p>
+                                        {/* Enum challenges*/}
+                                        <h3 className={`text-sm mb-6 font-semibold ${colorClasses.text}`}>Les défis
+                                            techniques: </h3>
+                                        <div className="space-y-3">
+                                            {challenge.steps.map((step, stepIndex) => (
+                                                <div key={stepIndex} className="flex items-start gap-3">
+                                                    <div
+                                                        className={`w-6 h-6 rounded-full ${colorClasses.bg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                                                        <span
+                                                            className={`text-sm ${colorClasses.text}`}>{stepIndex + 1}</span>
+                                                    </div>
+                                                    <p className={`text-sm ${theme === 'dark' ? 'text-gray-400 group-hover:text-gray-300' : 'text-gray-600 group-hover:text-gray-700'}`}>
+                                                        {step}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 };

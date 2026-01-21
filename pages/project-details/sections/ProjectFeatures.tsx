@@ -1,24 +1,18 @@
-'use client';
-
 import {useTheme} from "@/app/theme/ThemeProvider";
 import * as React from "react";
-import {ForwardRefExoticComponent} from "react";
-import {RocketLaunchIcon} from "@heroicons/react/24/outline";
-import {AccessibilityIcon} from "lucide-react";
+import {IconComponent} from "@/pages/types/utils";
 
-interface Feature {
-    icon: ForwardRefExoticComponent<any>,
-    id: number;
+export interface Feature {
+    icon: IconComponent,
     name: string;
     description: string;
     tags: string[];
     feature_type: 'backend' | 'frontend' | 'architecture' | 'fullstack' | 'devops'
 }
 
-const features: Feature[] = [
+/*const features: Feature[] = [
     {
         icon: RocketLaunchIcon,
-        id: 1,
         name: 'FitTracker Pro',
         description: 'A comprehensive fitness tracking app with real-time workout monitoring',
         tags: ['Backend', 'Frontend', 'Fullstack'],
@@ -26,17 +20,18 @@ const features: Feature[] = [
     },
     {
         icon: AccessibilityIcon,
-        id: 2,
         name: 'CryptoWatch',
         description: 'Real-time cryptocurrency tracking and portfolio management',
         tags: ['Flutter', 'Dart', 'Firebase'],
         feature_type: 'backend'
     },
-];
+];*/
 
 
-export const ProjectAppFeatures = () => {
+export const ProjectFeatures = (props: {features: Feature[]}) => {
     const {theme} = useTheme();
+
+    const {features} = props;
 
     const iconColors = [
         theme === 'dark' ? 'text-blue-400' : 'text-blue-600',
@@ -50,7 +45,7 @@ export const ProjectAppFeatures = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
                     {features.map((feature, index) => (
                         <div
-                            key={feature.id}
+                            key={feature.name}
                             className={`group rounded-xl sm:rounded-2xl p-1 ${
                                 theme === 'dark' ? 'bg-gradient-to-b from-gray-800/50 to-gray-900/50' : 'bg-gradient-to-b from-gray-100 to-white shadow-lg'
                             }`}
