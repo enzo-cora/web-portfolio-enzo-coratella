@@ -1,5 +1,5 @@
-import {ProjectDetailsPage} from "@/pages/project-details/ProjectDetailsPage";
-import {Slugs} from "@/pages/project-details/data/slugs";
+import {ProjectDetailsPage} from "@/screens/project-details/ProjectDetailsPage";
+import {Slugs} from "@/screens/project-details/data/slugs";
 
 export const dynamicParams = false;
 

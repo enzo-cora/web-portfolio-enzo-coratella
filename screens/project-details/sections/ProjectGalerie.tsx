@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import {useTheme} from '@/app/theme/ThemeProvider';
+import Image from 'next/image';
 
 export type GalleryData = {
     column_1: Array<{
@@ -53,10 +54,11 @@ export const ProjectGalerie = (props: { gallery: GalleryData }) => {
                                 onClick={() => setOpenSrc(img.imageSrc)}
                                 aria-label="Agrandir l’image"
                             >
-                                <img
+                                <Image
                                     src={img.imageSrc}
                                     alt={img.alt ?? ''}
-                                    loading="lazy"
+                                    width={800}
+                                    height={800}
                                     className="w-full h-auto block hover:opacity-95 transition"
                                 />
                             </button>
@@ -72,10 +74,11 @@ export const ProjectGalerie = (props: { gallery: GalleryData }) => {
                                 onClick={() => setOpenSrc(img.imageSrc)}
                                 aria-label="Agrandir l’image"
                             >
-                                <img
+                                <Image
                                     src={img.imageSrc}
                                     alt={img.alt ?? ''}
-                                    loading="lazy"
+                                    width={800}
+                                    height={800}
                                     className="w-full h-auto block hover:opacity-95 transition"
                                 />
                             </button>
@@ -101,9 +104,13 @@ export const ProjectGalerie = (props: { gallery: GalleryData }) => {
                         ✕
                     </button>
 
-                    <img
+                    <Image
                         src={openSrc}
                         alt=""
+                        width={1600}
+                        height={1600}
+                        sizes="auto"
+                        style={{ width: 'auto', height: 'auto' }}
                         className="max-h-[90vh] max-w-[92vw] object-contain rounded-lg shadow-2xl"
                         onClick={(e) => e.stopPropagation()}
                     />

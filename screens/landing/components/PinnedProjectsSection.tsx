@@ -3,7 +3,7 @@
 import {motion} from 'framer-motion';
 import Image, {StaticImageData} from "next/image";
 import Link from "next/link";
-import {Slugs} from "@/pages/project-details/data/slugs";
+import {Slugs} from "@/screens/project-details/data/slugs";
 
 export type PinnedProject = {
     title: string,

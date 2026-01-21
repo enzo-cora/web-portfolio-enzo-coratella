@@ -3,9 +3,9 @@
 import {motion} from 'framer-motion';
 import {useCallback, useEffect, useState} from 'react';
 import useEmblaCarousel from "embla-carousel-react";
-import {ProjectPreview} from "@/pages/landing/components/project-list-section/project-preview.type";
-import {ProjectCard} from "@/pages/landing/components/project-list-section/ProjectCard";
-import {technicalTags, TechnicalTags} from "@/pages/project-details/types";
+import {ProjectPreview} from "@/screens/landing/components/project-list-section/project-preview.type";
+import {ProjectCard} from "@/screens/landing/components/project-list-section/ProjectCard";
+import {technicalTags, TechnicalTags} from "@/screens/project-details/types";
 
 
 const filters: Array<TechnicalTags | 'Tous'> = ['Tous', ...technicalTags, ]

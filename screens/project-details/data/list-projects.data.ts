@@ -1,7 +1,7 @@
-import {FullProjectData} from "@/pages/project-details/types";
-import {immobilierFullData} from "@/pages/project-details/data/projects/arbitrage-crypto.data";
-import {PinnedProject} from "@/pages/landing/components/PinnedProjectsSection";
-import {ProjectPreview} from "@/pages/landing/components/project-list-section/project-preview.type";
+import {FullProjectData} from "@/screens/project-details/types";
+import {immobilierFullData} from "@/screens/project-details/data/projects/arbitrage-crypto.data";
+import {PinnedProject} from "@/screens/landing/components/PinnedProjectsSection";
+import {ProjectPreview} from "@/screens/landing/components/project-list-section/project-preview.type";
 
 
 export const projectDataList: FullProjectData[] = [

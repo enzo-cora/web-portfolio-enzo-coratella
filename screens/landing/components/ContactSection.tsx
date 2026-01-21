@@ -1,7 +1,7 @@
 'use client';
 
 import {motion} from 'framer-motion';
-import {ContactForm} from "@/pages/landing/components/ContactForm";
+import {ContactForm} from "@/screens/landing/components/ContactForm";
 
 export function ContactSection() {
 	return (

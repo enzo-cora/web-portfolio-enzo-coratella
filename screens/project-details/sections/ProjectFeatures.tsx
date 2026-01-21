@@ -2,7 +2,7 @@
 
 import {useTheme} from "@/app/theme/ThemeProvider";
 import * as React from "react";
-import {IconComponent} from "@/pages/types/utils";
+import {IconComponent} from "@/screens/types/utils";
 
 export interface Feature {
     icon: IconComponent,

@@ -1,16 +1,16 @@
 'use client';
 
 import {ThemeToggle} from "@/app/theme/ThemeToggle";
-import {ProjectHeroSection} from "@/pages/project-details/sections/ProjectHeroSection";
-import {ProjectStackSection} from "@/pages/project-details/sections/ProjectStackSection";
-import {ProjectFeatures} from "@/pages/project-details/sections/ProjectFeatures";
-import {ProjectTechnicalChallenges} from "@/pages/project-details/sections/ProjectTechnicalChallenges";
-import {ProjectGalerie} from "@/pages/project-details/sections/ProjectGalerie";
-import {ProjectPresentationText} from "@/pages/project-details/sections/ProjectPresentationText";
+import {ProjectHeroSection} from "@/screens/project-details/sections/ProjectHeroSection";
+import {ProjectStackSection} from "@/screens/project-details/sections/ProjectStackSection";
+import {ProjectFeatures} from "@/screens/project-details/sections/ProjectFeatures";
+import {ProjectTechnicalChallenges} from "@/screens/project-details/sections/ProjectTechnicalChallenges";
+import {ProjectGalerie} from "@/screens/project-details/sections/ProjectGalerie";
+import {ProjectPresentationText} from "@/screens/project-details/sections/ProjectPresentationText";
 import {notFound} from "next/dist/client/components/not-found";
-import {projectDataList} from "@/pages/project-details/data/list-projects.data";
+import {projectDataList} from "@/screens/project-details/data/list-projects.data";
 import Link from "next/link";
-import {Slugs} from "@/pages/project-details/data/slugs";
+import {Slugs} from "@/screens/project-details/data/slugs";
 
 
 export function ProjectDetailsPage(props: { slug: Slugs }) {

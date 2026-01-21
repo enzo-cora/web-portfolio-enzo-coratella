@@ -3,7 +3,7 @@
 import {motion} from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import {ProjectPreview} from "@/pages/landing/components/project-list-section/project-preview.type";
+import {ProjectPreview} from "@/screens/landing/components/project-list-section/project-preview.type";
 
 
 export function ProjectCard(props: { project: ProjectPreview }) {

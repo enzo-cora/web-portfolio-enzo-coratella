@@ -2,13 +2,13 @@
 
 import {useTheme} from '@/app/theme/ThemeProvider';
 import {ThemeToggle} from '@/app/theme/ThemeToggle';
-import {HeroSection} from "@/pages/landing/components/HeroSection";
-import {PinnedProjectsSection} from "@/pages/landing/components/PinnedProjectsSection";
-import {ContactSection} from "@/pages/landing/components/ContactSection";
-import {SkillsSection} from "@/pages/landing/components/SkillsSection";
-import {ProjectList} from "@/pages/landing/components/project-list-section/ProjectList";
-import {DevelopmentProcess} from "@/pages/landing/components/DevelopmentProcess";
-import {getPinnedProjects, getProjectsPreviews} from "@/pages/project-details/data/list-projects.data";
+import {HeroSection} from "@/screens/landing/components/HeroSection";
+import {PinnedProjectsSection} from "@/screens/landing/components/PinnedProjectsSection";
+import {ContactSection} from "@/screens/landing/components/ContactSection";
+import {SkillsSection} from "@/screens/landing/components/SkillsSection";
+import {ProjectList} from "@/screens/landing/components/project-list-section/ProjectList";
+import {DevelopmentProcess} from "@/screens/landing/components/DevelopmentProcess";
+import {getPinnedProjects, getProjectsPreviews} from "@/screens/project-details/data/list-projects.data";
 
 export function LandingPagePortfolio() {
 	const { theme } = useTheme();

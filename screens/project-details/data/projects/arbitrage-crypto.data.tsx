@@ -1,21 +1,21 @@
 import {ArrowPathIcon, CloudIcon, DocumentTextIcon, RocketLaunchIcon, UserGroupIcon} from "@heroicons/react/24/outline";
 import {AccessibilityIcon, BuildingIcon, DatabaseBackupIcon, PaintbrushIcon} from "lucide-react";
-import {Feature} from "@/pages/project-details/sections/ProjectFeatures";
+import {Feature} from "@/screens/project-details/sections/ProjectFeatures";
 import searchLandingPage from "@/public/images/projet-immobilier/search-landing-page.webp";
-import {GalleryData} from "@/pages/project-details/sections/ProjectGalerie";
+import {GalleryData} from "@/screens/project-details/sections/ProjectGalerie";
 import fullPageScrolling from "@/public/images/projet-immobilier/full-page-scrolling.webp"
 import houseInfo from "@/public/images/projet-immobilier/house-information-page.webp"
 import phoneVersion from "@/public/images/projet-immobilier/phone-version.webp"
 import gitlabLogo from "@/public/images/gitlab-logo-500-rgb.svg"
-import {ProjectPresentationData} from "@/pages/project-details/sections/ProjectPresentationText";
+import {ProjectPresentationData} from "@/screens/project-details/sections/ProjectPresentationText";
 import Image from "next/image";
-import {TechnicalChallengeData} from "@/pages/project-details/sections/ProjectTechnicalChallenges";
-import {ProjectStackData} from "@/pages/project-details/sections/ProjectStackSection";
-import {ProjectHeroSectionData} from "@/pages/project-details/sections/ProjectHeroSection";
-import {FullProjectData} from "@/pages/project-details/types";
-import {Slugs} from "@/pages/project-details/data/slugs";
-import {ProjectPreview} from "@/pages/landing/components/project-list-section/project-preview.type";
-import {PinnedProject} from "@/pages/landing/components/PinnedProjectsSection";
+import {TechnicalChallengeData} from "@/screens/project-details/sections/ProjectTechnicalChallenges";
+import {ProjectStackData} from "@/screens/project-details/sections/ProjectStackSection";
+import {ProjectHeroSectionData} from "@/screens/project-details/sections/ProjectHeroSection";
+import {FullProjectData} from "@/screens/project-details/types";
+import {Slugs} from "@/screens/project-details/data/slugs";
+import {ProjectPreview} from "@/screens/landing/components/project-list-section/project-preview.type";
+import {PinnedProject} from "@/screens/landing/components/PinnedProjectsSection";
 /* ----------------------- [HERO DATA] SECTION -----------------------------*/
 
 const heroSectionData: ProjectHeroSectionData = {
@@ -87,7 +87,7 @@ const presentationData: ProjectPresentationData = {
         <div className="text-md text-justify leading-relaxed">
             <p><b>Transactimo</b> is a business application developed to meet the specific needs of a real estate agency
                 specializing in the sale and rental of residential and commercial properties. The main objective was to
-                digitize and centralize the management of listings, client follow-up, and agents' work within a single
+                digitize and centralize the management of listings, client follow-up, and agents work within a single
                 tool.</p>
             <br/>
             <p>The application notably allows for the creation and publication of property listings, management of

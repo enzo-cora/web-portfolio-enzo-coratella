@@ -1,6 +1,6 @@
-import {Slugs} from "@/pages/project-details/data/slugs";
+import {Slugs} from "@/screens/project-details/data/slugs";
 import {StaticImageData} from "next/image";
-import {TechnicalTags} from "@/pages/project-details/types";
+import {TechnicalTags} from "@/screens/project-details/types";
 
 
 export type ProjectPreview = {
