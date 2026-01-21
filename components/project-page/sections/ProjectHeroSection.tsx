@@ -1,8 +1,8 @@
 'use client';
 
 import {useTheme} from "@/app/theme/ThemeProvider";
-import {IconComponent} from "@/screens/types/utils";
-import {TechnicalTags} from "@/screens/project-details/types";
+import {IconComponent} from "@/components/utils.type";
+import {TechnicalTags} from "@/components/project-page/types";
 
 
 export type ProjectHeroSectionData = {

@@ -2,7 +2,7 @@
 
 import {useTheme} from "@/app/theme/ThemeProvider";
 import React from "react";
-import {IconComponent} from "@/screens/types/utils";
+import {IconComponent} from "@/components/utils.type";
 
 export interface TechnicalChallengeData {
     scope: string; //Backend / Frontend / ...

@@ -1,21 +1,21 @@
 import {ArrowPathIcon, CloudIcon, DocumentTextIcon, RocketLaunchIcon, UserGroupIcon} from "@heroicons/react/24/outline";
 import {AccessibilityIcon, BuildingIcon, DatabaseBackupIcon, PaintbrushIcon} from "lucide-react";
-import {Feature} from "@/screens/project-details/sections/ProjectFeatures";
+import {Feature} from "@/components/project-page/sections/ProjectFeatures";
 import searchLandingPage from "@/public/images/projet-immobilier/search-landing-page.webp";
-import {GalleryData} from "@/screens/project-details/sections/ProjectGalerie";
+import {GalleryData} from "@/components/project-page/sections/ProjectGalerie";
 import fullPageScrolling from "@/public/images/projet-immobilier/full-page-scrolling.webp"
 import houseInfo from "@/public/images/projet-immobilier/house-information-page.webp"
 import phoneVersion from "@/public/images/projet-immobilier/phone-version.webp"
 import gitlabLogo from "@/public/images/gitlab-logo-500-rgb.svg"
-import {ProjectPresentationData} from "@/screens/project-details/sections/ProjectPresentationText";
+import {ProjectPresentationData} from "@/components/project-page/sections/ProjectPresentationText";
 import Image from "next/image";
-import {TechnicalChallengeData} from "@/screens/project-details/sections/ProjectTechnicalChallenges";
-import {ProjectStackData} from "@/screens/project-details/sections/ProjectStackSection";
-import {ProjectHeroSectionData} from "@/screens/project-details/sections/ProjectHeroSection";
-import {FullProjectData} from "@/screens/project-details/types";
-import {Slugs} from "@/screens/project-details/data/slugs";
-import {ProjectPreview} from "@/screens/landing/components/project-list-section/project-preview.type";
-import {PinnedProject} from "@/screens/landing/components/PinnedProjectsSection";
+import {TechnicalChallengeData} from "@/components/project-page/sections/ProjectTechnicalChallenges";
+import {ProjectStackData} from "@/components/project-page/sections/ProjectStackSection";
+import {ProjectHeroSectionData} from "@/components/project-page/sections/ProjectHeroSection";
+import {FullProjectData} from "@/components/project-page/types";
+import {Slugs} from "@/data/slugs";
+import {ProjectPreview} from "@/components/landing-page/components/project-list-section/project-preview.type";
+import {PinnedProject} from "@/components/landing-page/components/PinnedProjectsSection";
 /* ----------------------- [HERO DATA] SECTION -----------------------------*/
 
 const heroSectionData: ProjectHeroSectionData = {

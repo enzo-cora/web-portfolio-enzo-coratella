@@ -1,5 +1,5 @@
 'use client';
 
-import {LandingPagePortfolio} from "@/screens/landing/LandingPagePortfolio";
+import {LandingPagePortfolio} from "@/components/landing-page/LandingPagePortfolio";
 
 export default LandingPagePortfolio
