@@ -41,6 +41,7 @@ export function ProjectPresentationText(props: { presentation: ProjectPresentati
                     <h3 className={`text-xs uppercase tracking-wider mb-3 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                         Resources
                     </h3>
+                    
                     <div className="flex flex-col gap-2">
                         {presentation.sources.map((source, i) => (
                             <a

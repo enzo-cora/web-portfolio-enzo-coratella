@@ -1,5 +1,5 @@
 import {FullProjectData} from "@/components/project-page/types";
-import {immobilierFullData} from "@/data/projects/arbitrage-crypto.data";
+import {immobilierFullData} from "@/data/projects/app-immobiliere.data";
 import {PinnedProject} from "@/components/landing-page/sections/PinnedProjectsSection";
 import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/project-preview.type";
 

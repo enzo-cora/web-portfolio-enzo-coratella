@@ -4,7 +4,7 @@ import {motion} from 'framer-motion';
 import {useCallback, useEffect, useState} from 'react';
 import useEmblaCarousel from "embla-carousel-react";
 import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/project-preview.type";
-import {ProjectCard} from "@/components/landing-page/sections/project-list-section/ProjectCard";
+import {ProjectCardPreview} from "@/components/landing-page/sections/project-list-section/ProjectCardPreview";
 import {technicalTags, TechnicalTags} from "@/components/project-page/types";
 
 
@@ -120,7 +120,7 @@ export function ProjectList(props: { projectsPreview: ProjectPreview[] }) {
                                 >
                                     {group.map((project) => (
                                         /* Card */
-                                        <ProjectCard key={project.slug} project={project}/>
+                                        <ProjectCardPreview key={project.slug} project={project}/>
                                     ))}
                                 </div>
                             </div>

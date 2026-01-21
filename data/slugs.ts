@@ -1,4 +1,5 @@
 export enum Slugs {
-    immobilier = "app-immobiliere",
+    immobilier = "immobiliere-app",
+    whoAmI = "who-a-i-game",
     cryptoArbitrage = "crypto-arbitrage",
 }

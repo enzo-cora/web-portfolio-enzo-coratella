@@ -49,7 +49,7 @@ function FloatingBackToPortfolio() {
                 aria-label="Back to portfolio"
             >
                 <span aria-hidden>←</span>
-                <span>Back to portfolio</span>
+                <span>Retour au portfolio</span>
             </Link>
         </div>
     );

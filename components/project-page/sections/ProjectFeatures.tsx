@@ -3,13 +3,14 @@
 import {useTheme} from "@/app/theme/ThemeProvider";
 import * as React from "react";
 import {IconComponent} from "@/components/utils.type";
+import {TechnicalTags} from "@/components/project-page/types";
 
 export interface Feature {
     icon: IconComponent,
     name: string;
     description: string;
     tags: string[];
-    feature_type: 'backend' | 'frontend' | 'architecture' | 'fullstack' | 'devops'
+    feature_type: TechnicalTags | 'Frontend'
 }
 
 
@@ -23,6 +24,25 @@ export const ProjectFeatures = (props: {features: Feature[]}) => {
         theme === 'dark' ? 'text-blue-400' : 'text-blue-600',
         theme === 'dark' ? 'text-purple-400' : 'text-purple-500'
     ]
+
+    const featureTypeBadge: Record<TechnicalTags | 'Frontend', string> = {
+        Backend: theme === 'dark'
+            ? 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+            : 'bg-blue-100 text-blue-600 border-blue-200',
+        Frontend: theme === 'dark'
+            ? 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20'
+            : 'bg-yellow-100 text-yellow-600 border-yellow-200',
+        DevOps: theme === 'dark'
+            ? 'bg-orange-500/10 text-orange-400 border-orange-500/20'
+            : 'bg-orange-100 text-orange-600 border-orange-200',
+        Architecture: theme === 'dark'
+            ? 'bg-purple-500/10 text-purple-400 border-purple-500/20'
+            : 'bg-purple-100 text-purple-600 border-purple-200',
+        Fullstack: theme === 'dark'
+            ? 'bg-pink-500/10 text-pink-400 border-pink-500/20'
+            : 'bg-pink-100 text-pink-600 border-pink-200',
+    };
+
 
     return (
         <section className="py-16 md:py-20 relative">
@@ -74,12 +94,12 @@ export const ProjectFeatures = (props: {features: Feature[]}) => {
                                                 {feature.name}
                                             </h3>
                                             <span
-                                                className={`px-2 py-0.5 rounded-full text-xs whitespace-nowrap ${
-                                                    theme === 'dark' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'bg-blue-100 text-blue-600 border border-blue-200'
+                                                className={`px-2 py-0.5 rounded-full text-xs whitespace-nowrap border ${
+                                                    featureTypeBadge[feature.feature_type] ?? /*Default color*/ featureTypeBadge.Backend
                                                 }`}
                                             >
-												{feature.feature_type}
-											</span>
+                                                {feature.feature_type.toLowerCase()}
+                                            </span>
                                         </div>
                                         <p className={`mb-4 text-center sm:text-left ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{feature.description}</p>
 

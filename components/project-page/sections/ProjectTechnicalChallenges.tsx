@@ -5,10 +5,10 @@ import React from "react";
 import {IconComponent} from "@/components/utils.type";
 
 export interface TechnicalChallengeData {
-    scope: string; //Backend / Frontend / ...
-    description: string
+    scopeTitle: string; //Backend / Frontend / ...
+    scopeDescription: string
     icon: IconComponent;
-    steps: string[];
+    challengesList: string[];
 }
 
 export const ProjectTechnicalChallenges = (props: { technicalChallenges: TechnicalChallengeData[] }) => {
@@ -86,16 +86,16 @@ export const ProjectTechnicalChallenges = (props: { technicalChallenges: Technic
                                             <h3
                                                 className={`text-xl font-semibold mb-3 text-center transition-colors ${colorClasses.text}`}
                                             >
-                                                {challenge.scope}
+                                                {challenge.scopeTitle}
                                             </h3>
                                         </div>
 
-                                        <p className="mb-6 text-sm">{challenge.description}</p>
+                                        <p className="mb-6 text-sm">{challenge.scopeDescription}</p>
                                         {/* Enum challenges*/}
                                         <h3 className={`text-sm mb-6 font-semibold ${colorClasses.text}`}>Les défis
                                             techniques: </h3>
                                         <div className="space-y-3">
-                                            {challenge.steps.map((step, stepIndex) => (
+                                            {challenge.challengesList.map((step, stepIndex) => (
                                                 <div key={stepIndex} className="flex items-start gap-3">
                                                     <div
                                                         className={`w-6 h-6 rounded-full ${colorClasses.bg} flex items-center justify-center flex-shrink-0 mt-0.5`}>

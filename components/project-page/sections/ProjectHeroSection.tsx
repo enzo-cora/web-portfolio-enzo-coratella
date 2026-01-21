@@ -69,15 +69,15 @@ export const ProjectHeroSection = (props: { heroSectionData: ProjectHeroSectionD
                 <div className="text-center mb-8">
                     <span
                         className={`text-lg md:text-xl mb-2 block ${theme === 'dark' ? 'text-gray-400' : 'text-gray-700 font-medium'}`}>Hello, voici</span>
-                    <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-4">
+                    <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4">
 						<span
                             className="bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 text-transparent bg-clip-text bg-[size:200%] animate-gradient">
-							Crypto Arbitrage
+							{heroSectionData.title}
 						</span>
                     </h1>
 
                     <h2
-                        className={`text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 ${
+                        className={`mx-20 text-2xl sm:text-3xl md:text-3xl font-semibold mb-6 ${
                             theme === 'dark' ? 'bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-300' : 'text-gray-800'
                         }`}
                     >

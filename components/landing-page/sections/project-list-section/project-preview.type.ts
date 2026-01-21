@@ -9,12 +9,12 @@ export type ProjectPreview = {
     description: string
     image: StaticImageData
     technicalTag: TechnicalTags[],
-    button_1? : {
-        label: "Voir projet",
-        link: "https://github.com/tailwindlabs/heroicons"
+    view_project_button : {
+        label: string,
+        link: string
     },
     button_2? : {
-        label: "Gitlab",
-        link: "https://docs.gitlab.com/ci/"
+        label: string,
+        link: string
     },
 }
