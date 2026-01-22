@@ -3,6 +3,7 @@ import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
 import {ThemeProvider} from '@/app/theme/ThemeProvider';
 import {Analytics} from '@vercel/analytics/next';
+import Script from 'next/script';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -87,6 +88,11 @@ export default function RootLayout({
 						<Analytics />
 					</div>
 				</ThemeProvider>
+
+				<Script
+					src="https://web3forms.com/client/script.js"
+					strategy="afterInteractive"
+				/>
 			</body>
 		</html>
 	);
