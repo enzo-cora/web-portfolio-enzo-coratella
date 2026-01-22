@@ -90,6 +90,11 @@ export default function RootLayout({
 				</ThemeProvider>
 
 				<Script
+					src="https://static.cloudflareinsights.com/beacon.min.js"
+					strategy="afterInteractive"
+					data-cf-beacon='{"token": "c448d8387ec2499595ffd961ca60e62e"}'
+				/>
+				<Script
 					src="https://web3forms.com/client/script.js"
 					strategy="afterInteractive"
 				/>
