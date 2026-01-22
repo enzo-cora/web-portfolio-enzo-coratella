@@ -4,11 +4,13 @@ import {motion} from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/project-preview.type";
+import {useRouter} from "next/navigation";
 
 
 export function ProjectCardPreview(props: { project: ProjectPreview }) {
 
     const {project} = props
+    const router = useRouter();
 
     return (
             <div className="relative cursor-pointer">
@@ -21,7 +23,7 @@ export function ProjectCardPreview(props: { project: ProjectPreview }) {
                     whileHover={{scale: 1.02}}
                 >
                     <div
-                        onClick={() => window.location.href = `/projet/${project.slug}`}
+                        onClick={() => router.push(`/projet/${project.slug}`)}
                         className="group relative aspect-video w-full max-h-[260px] sm:max-h-[300px] bg-white dark:bg-gradient-to-br dark:from-purple-900/50 dark:to-blue-900/50 rounded-xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.15)] transition-all duration-300">
                         <Image
                             src={project.image}
