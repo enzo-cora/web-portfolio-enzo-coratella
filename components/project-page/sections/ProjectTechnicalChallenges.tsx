@@ -6,7 +6,7 @@ import {IconComponent} from "@/components/utils.type";
 
 export interface TechnicalChallengeData {
     scopeTitle: string; //Backend / Frontend / ...
-    scopeDescription: string | ReactNode
+    scopePresentation: string | ReactNode
     icon: IconComponent;
     challengesList: string[];
 }
@@ -90,7 +90,7 @@ export const ProjectTechnicalChallenges = (props: { technicalChallenges: Technic
                                             </h3>
                                         </div>
 
-                                        <p className="mb-6 text-sm">{challenge.scopeDescription}</p>
+                                        <div className="mb-6 text-sm">{challenge.scopePresentation}</div>
                                         {/* Enum challenges*/}
                                         <h3 className={`text-sm mb-6 font-semibold ${colorClasses.text}`}>Les défis
                                             techniques: </h3>

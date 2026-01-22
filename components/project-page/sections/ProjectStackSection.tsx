@@ -3,12 +3,12 @@
 import {useTheme} from "@/app/theme/ThemeProvider";
 
 export type ProjectStackData = {
-    core_skills: Array<{
+    core_stack: Array<{
         name: string;
         level: number;
         description: string
     }>;
-    specialized_skills: Array<{
+    specialized_stack: Array<{
         name: string;
         level: number;
     }>;
@@ -53,7 +53,7 @@ export const ProjectStackSection = (props: {stack: ProjectStackData}) => {
                             </svg>
                             Core Stack
                         </h3>
-                        {stack.core_skills.map((skill, index) => {
+                        {stack.core_stack.map((skill, index) => {
                             return (
                                 <div key={skill.name} className="group relative">
                                     <div className="flex flex-wrap sm:flex-nowrap justify-between mb-2 gap-2">
@@ -116,7 +116,7 @@ export const ProjectStackSection = (props: {stack: ProjectStackData}) => {
                             Stack secondaire
                         </h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            {stack.specialized_skills.map((skill) => (
+                            {stack.specialized_stack.map((skill) => (
                                 <div
                                     key={skill.name}
                                     className={`group backdrop-blur-sm p-4 rounded-xl border relative overflow-hidden ${

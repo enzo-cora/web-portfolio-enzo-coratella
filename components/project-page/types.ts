@@ -11,7 +11,8 @@ import {ProjectPreview} from "@/components/landing-page/sections/project-list-se
 export const technicalTags = ['Backend', 'Fullstack', 'Architecture', 'DevOps'] as const
 export type TechnicalTags = (typeof technicalTags)[number]
 
-export type FullProjectData = {
+export type StandardProjectData = {
+    type: 'standardProject'
     slug: string;
     heroSectionData: ProjectHeroSectionData
     gallery: GalleryData
@@ -21,4 +22,12 @@ export type FullProjectData = {
     projectPreview: ProjectPreview,
     features: Feature[]
     technicalChallenges: TechnicalChallengeData[]
+}
+
+export type ArticleProjectData = {
+    type: 'articleProjectView'
+    slug: string;
+    heroSectionData: ProjectHeroSectionData
+    presentation: ProjectPresentationData
+    projectPreview: ProjectPreview
 }

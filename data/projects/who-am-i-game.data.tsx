@@ -26,7 +26,7 @@ import Image from "next/image";
 import {TechnicalChallengeData} from "@/components/project-page/sections/ProjectTechnicalChallenges";
 import {ProjectStackData} from "@/components/project-page/sections/ProjectStackSection";
 import {ProjectHeroSectionData} from "@/components/project-page/sections/ProjectHeroSection";
-import {FullProjectData} from "@/components/project-page/types";
+import {StandardProjectData} from "@/components/project-page/types";
 import {Slugs} from "@/data/slugs";
 import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/project-preview.type";
 import {PinnedProject} from "@/components/landing-page/sections/PinnedProjectsSection";
@@ -37,9 +37,9 @@ import React from "react";
 const slug = Slugs.whoAmI
 
 const heroSectionData: ProjectHeroSectionData = {
-    title: "Jeux web: 'Who Am I' ",
+    title: "Jeux web: Qui suis-je ? ",
     technical_tags: ["Backend", "Fullstack", "Architecture", 'DevOps'],
-    subtitle_description: "Jeu web multijoueur en temps réel",
+    subtitle: "Un jeu multijoueur sur navigateur en temps réel",
     short_app_description: "Jeu multijoueur en temps réel inspiré de Guess Who?, jouable en ligne à plusieurs, sur tous les navigateurs",
     impact_metrics: [
         {
@@ -82,7 +82,7 @@ const heroSectionData: ProjectHeroSectionData = {
                 icon: CloudIcon,
             },
         ],
-        featuresPills: ['Cross-Platform', 'API-First', 'Scalable Architecture'],
+        featuresPills: ["Temps réel", "Multijoueur", "Low-latency"],
     },
 }
 
@@ -148,13 +148,13 @@ const presentationData: ProjectPresentationData = {
 /* ----------------------- [SKILLS] SECTION -----------------------------*/
 
 const projectStackData: ProjectStackData = {
-    core_skills: [
+    core_stack: [
         {name: 'TypeScript', level: 90, description: "Language"},
         {name: 'React', level: 85, description: "Frontend"},
         {name: 'Socket.IO', level: 80, description: "WebSocket"},
         {name: 'MongoDb', level: 75, description: "Database"},
     ],
-    specialized_skills: [
+    specialized_stack: [
         {name: 'Architecture temps réel', level: 80},
         {name: 'Docker', level: 75},
         {name: 'CI/CD (GitLab)', level: 70},
@@ -244,8 +244,8 @@ const projectMainPicture = lobbyView
 const projectPreview: ProjectPreview = {
     slug: slug,
     title: heroSectionData.title,
-    description: heroSectionData.subtitle_description,
-    image: projectMainPicture,
+    description: heroSectionData.subtitle,
+    image: mobileView,
     technicalTag: heroSectionData.technical_tags,
     view_project_button: {
         label: "Voir projet",
@@ -261,7 +261,7 @@ const projectPreview: ProjectPreview = {
 const technicalChallenges: TechnicalChallengeData[] = [
     {
         scopeTitle: 'Backend',
-        scopeDescription: (
+        scopePresentation: (
             <p>
                 Le backend de Who Am I game est le moteur de l’application. Il orchestre toute la logique de jeu, gère
                 l’état de la partie en temps réel et assure une communication fluide entre les joueurs.
@@ -280,7 +280,7 @@ const technicalChallenges: TechnicalChallengeData[] = [
     },
     {
         scopeTitle: 'Frontend',
-        scopeDescription: (
+        scopePresentation: (
             <p>
                 Le frontend de Who Am I game est conçu comme une application React modulaire, organisée autour des
                 entités du jeu : joueurs, équipes, règles, scores, etc.
@@ -299,7 +299,7 @@ const technicalChallenges: TechnicalChallengeData[] = [
     },
     {
         scopeTitle: 'DevOps',
-        scopeDescription: (
+        scopePresentation: (
             <p>
                 Le composant <strong>DevOps</strong> de <em>Who Am I game</em> a été conçu pour garantir une <strong>expérience
                 développeur fluide</strong> et des <strong>déploiements rapides et sécurisés</strong>.
@@ -343,14 +343,14 @@ const pinToLandingPage: PinnedProject = {
             bulletsPoints: [
                 "Socket.IO rooms scalable",
                 "Event-driven game engine",
-                "State recovery & resilience",
+                "State recovery & résilience",
             ]
         },
         {
             paragraphTitle: "DevOps",
             bulletsPoints: [
-                "GitLab CI/CD prod-ready",
-                "Terraform AWS IaC",
+                "Env de Staging & CI/CD prod-ready",
+                "100% Terraform AWS IaC",
                 "semantic-release versioning",
             ]
         },
@@ -358,7 +358,7 @@ const pinToLandingPage: PinnedProject = {
             paragraphTitle: "Key Achievements",
             bulletsPoints: [
                 "<30ms latency",
-                "1k+ concurrent users",
+                "1k+ users simultanés",
                 "99.9% uptime",
             ]
         }
@@ -366,7 +366,8 @@ const pinToLandingPage: PinnedProject = {
 }
 
 
-export const whoAmIGameFullData: FullProjectData = {
+export const whoAmIGameFullData: StandardProjectData = {
+    type: 'standardProject',
     slug: slug,
     heroSectionData,
     gallery,

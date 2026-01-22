@@ -12,7 +12,7 @@ import Image from "next/image";
 import {TechnicalChallengeData} from "@/components/project-page/sections/ProjectTechnicalChallenges";
 import {ProjectStackData} from "@/components/project-page/sections/ProjectStackSection";
 import {ProjectHeroSectionData} from "@/components/project-page/sections/ProjectHeroSection";
-import {FullProjectData} from "@/components/project-page/types";
+import {StandardProjectData} from "@/components/project-page/types";
 import {Slugs} from "@/data/slugs";
 import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/project-preview.type";
 import {PinnedProject} from "@/components/landing-page/sections/PinnedProjectsSection";
@@ -24,8 +24,8 @@ const slug = Slugs.immobilier
 
 const heroSectionData: ProjectHeroSectionData = {
     title: "Plateforme de gestion immobilière",
-    technical_tags: ["Backend", "Fullstack", "Architecture"],
-    subtitle_description: "Application immobilière dédiée à la gestion centralisée des biens, clients et agents",
+    technical_tags: ["Backend", "Fullstack"],
+    subtitle: "Application immobilière dédiée à la gestion centralisée des biens, clients et agents",
     short_app_description: "Transactimo est une application immobilière centralisant la gestion des biens, des clients et des agents, évoluée vers une plateforme CRM sur mesure améliorant performances et expérience utilisateur.",
     impact_metrics: [
         {
@@ -127,7 +127,7 @@ const presentationData: ProjectPresentationData = {
 /* ----------------------- [SKILLS] SECTION -----------------------------*/
 
 const projectStackData: ProjectStackData = {
-    core_skills: [
+    core_stack: [
         {name: 'Nodejs', level: 95, description: "Main language"},
         {name: 'PostgresSql', level: 90, description: "Database"},
         {name: 'Angular', level: 80, description: "Frontend"},
@@ -135,7 +135,7 @@ const projectStackData: ProjectStackData = {
         {name: 'React', level: 85, description: "Refonte"},
         {name: 'AWS', level: 80, description: "Cloud"},
     ],
-    specialized_skills: [
+    specialized_stack: [
         {name: 'Rest API', level: 100},
         {name: 'UI/UX', level: 30},
         {name: 'Clean architecture', level: 30},
@@ -212,7 +212,7 @@ const projectMainPicture = searchLandingPage
 
 const pinToLandingPage: PinnedProject = {
     title: heroSectionData.title,
-    smallDescription: heroSectionData.subtitle_description,
+    smallDescription: heroSectionData.subtitle,
     image: projectMainPicture,
     slug: slug,
     bulletPointParagraphs: [
@@ -248,7 +248,7 @@ const pinToLandingPage: PinnedProject = {
 const projectPreview : ProjectPreview = {
     slug: slug,
     title: heroSectionData.title,
-    description: heroSectionData.subtitle_description,
+    description: heroSectionData.subtitle,
     image: projectMainPicture,
     technicalTag: heroSectionData.technical_tags,
     view_project_button: {
@@ -265,7 +265,7 @@ const projectPreview : ProjectPreview = {
 const technicalChallenges: TechnicalChallengeData[] = [
     {
         scopeTitle: 'Backend & Architecture',
-        scopeDescription: "API REST Node.js pensée pour la scalabilité et la maintenabilité, avec un découpage clair des responsabilités.",
+        scopePresentation: "API REST Node.js pensée pour la scalabilité et la maintenabilité, avec un découpage clair des responsabilités.",
         icon: DatabaseBackupIcon,
         challengesList: [
             "Clean Architecture : isolation domain / application / infrastructure",
@@ -278,7 +278,7 @@ const technicalChallenges: TechnicalChallengeData[] = [
     },
     {
         scopeTitle: 'DevOps & Sécurité',
-        scopeDescription: "Déploiement containerisé sur AWS et sécurisation des secrets / routes sensibles.",
+        scopePresentation: "Déploiement containerisé sur AWS et sécurisation des secrets / routes sensibles.",
         icon: ArrowPathIcon,
         challengesList: [
             "Dockerisation des services (Dockerfile, build pipeline)",
@@ -291,7 +291,7 @@ const technicalChallenges: TechnicalChallengeData[] = [
     },
     {
         scopeTitle: 'Frontend & Accès',
-        scopeDescription: "Interface responsive orientée UX, avec séparation claire entre espace public et espace agent.",
+        scopePresentation: "Interface responsive orientée UX, avec séparation claire entre espace public et espace agent.",
         icon: PaintbrushIcon,
         challengesList: [
             "UX/UI sur-mesure : interface clean, fluide, responsive",
@@ -305,7 +305,8 @@ const technicalChallenges: TechnicalChallengeData[] = [
 ];
 
 
-export const immobilierFullData: FullProjectData = {
+export const immobilierFullData: StandardProjectData = {
+    type: 'standardProject',
     slug: slug,
     heroSectionData,
     gallery,

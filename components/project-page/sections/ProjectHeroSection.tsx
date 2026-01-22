@@ -8,7 +8,7 @@ import {TechnicalTags} from "@/components/project-page/types";
 export type ProjectHeroSectionData = {
     title: string,
     technical_tags: TechnicalTags[],
-    subtitle_description: string,
+    subtitle: string,
     short_app_description: string,
     impact_metrics: Array<{
         icon: IconComponent,
@@ -81,7 +81,7 @@ export const ProjectHeroSection = (props: { heroSectionData: ProjectHeroSectionD
                             theme === 'dark' ? 'bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-300' : 'text-gray-800'
                         }`}
                     >
-                        {heroSectionData.subtitle_description}
+                        {heroSectionData.subtitle}
                     </h2>
 
                     {/* Technical Tags*/}
@@ -220,7 +220,7 @@ export const ProjectHeroSection = (props: { heroSectionData: ProjectHeroSectionD
                                     </p>
 
                                     {/* Business metrics*/}
-                                    <div className="grid grid-cols-3 gap-4 mb-6">
+                                    <div className="flex flex-wrap justify-center gap-6 mb-6">
                                         {heroSectionData.project_card.business_metrics.map((metric, index) => (
                                             <div key={index} className="space-y-1">
                                                 <div className="flex items-center justify-center gap-1">

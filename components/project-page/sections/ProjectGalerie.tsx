@@ -9,7 +9,7 @@ export type GalleryData = {
         image: StaticImageData;
         alt: string;
     }>,
-    column_2: Array<{
+    column_2?: Array<{
         image: StaticImageData;
         alt: string;
     }>,
@@ -32,6 +32,82 @@ export const ProjectGalerie = (props: { gallery: GalleryData }) => {
         return () => document.removeEventListener('keydown', onKeyDown);
     }, [openSrc]);
 
+
+    const twoColumnsComponent = (gallery: Required<GalleryData>) => <div className="mx-auto max-w-5xl px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 items-start">
+
+            {/*Colonne 1 (Required) */}
+            <div className="flex flex-col gap-4 sm:gap-6">
+                {gallery.column_1.map((img) => (
+                    <button
+                        key={img.image.src}
+                        type="button"
+                        className="block w-full rounded-xl overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                        onClick={() => setOpenSrc(img.image.src)}
+                        aria-label="Agrandir l’image"
+                    >
+                        <Image
+                            src={img.image}
+                            alt={img.alt}
+                            width={800}
+                            height={800}
+                            className="w-full h-auto block hover:opacity-95 transition"
+                        />
+                    </button>
+                ))}
+            </div>
+
+            {/*Colonne 2*/}
+            <div className="flex flex-col gap-4 sm:gap-6">
+                {gallery.column_2.map((img) => (
+                    <button
+                        key={img.image.src}
+                        type="button"
+                        className="block w-full rounded-xl overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                        onClick={() => setOpenSrc(img.image.src)}
+                        aria-label="Agrandir l’image"
+                    >
+                        <Image
+                            src={img.image}
+                            alt={img.alt}
+                            width={800}
+                            height={800}
+                            className="w-full h-auto block hover:opacity-95 transition"
+                        />
+                    </button>
+                ))}
+            </div>
+
+        </div>
+    </div>
+
+    const oneColumnComponent = (gallery: Pick<GalleryData, 'column_1'>) => <div className="mx-auto max-w-5xl px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 sm:gap-6 place-items-center">
+            {/*Colonne 1 (Required) */}
+            <div className="flex flex-col gap-4 sm:gap-6">
+                {gallery.column_1.map((img) => (
+                    <button
+                        key={img.image.src}
+                        type="button"
+                        className="block w-full rounded-xl overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                        onClick={() => setOpenSrc(img.image.src)}
+                        aria-label="Agrandir l’image"
+                    >
+                        <Image
+                            src={img.image}
+                            alt={img.alt}
+                            width={800}
+                            height={800}
+                            className="w-full h-auto block hover:opacity-95 transition"
+                        />
+                    </button>
+                ))}
+            </div>
+
+        </div>
+    </div>
+
+
     return (
         <section className="relative py-16 sm:py-20">
             <h2
@@ -42,49 +118,14 @@ export const ProjectGalerie = (props: { gallery: GalleryData }) => {
                 Galerie
             </h2>
 
-            {/* Mur type Instagram (2 colonnes contrôlées) */}
+            {/* Mur type Instagram (1 ou 2 colonnes contrôlées) */}
             <div className="mx-auto max-w-5xl px-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 items-start">
-                    <div className="flex flex-col gap-4 sm:gap-6">
-                        {gallery.column_1.map((img) => (
-                            <button
-                                key={img.image.src}
-                                type="button"
-                                className="block w-full rounded-xl overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                                onClick={() => setOpenSrc(img.image.src)}
-                                aria-label="Agrandir l’image"
-                            >
-                                <Image
-                                    src={img.image}
-                                    alt={img.alt}
-                                    width={800}
-                                    height={800}
-                                    className="w-full h-auto block hover:opacity-95 transition"
-                                />
-                            </button>
-                        ))}
-                    </div>
-
-                    <div className="flex flex-col gap-4 sm:gap-6">
-                        {gallery.column_2.map((img) => (
-                            <button
-                                key={img.image.src}
-                                type="button"
-                                className="block w-full rounded-xl overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                                onClick={() => setOpenSrc(img.image.src)}
-                                aria-label="Agrandir l’image"
-                            >
-                                <Image
-                                    src={img.image}
-                                    alt={img.alt}
-                                    width={800}
-                                    height={800}
-                                    className="w-full h-auto block hover:opacity-95 transition"
-                                />
-                            </button>
-                        ))}
-                    </div>
-                </div>
+                {gallery.column_2
+                    ? twoColumnsComponent({
+                        column_1: gallery.column_1,
+                        column_2: gallery.column_2
+                    })
+                    : oneColumnComponent(gallery)}
             </div>
 
             {/* Lightbox simple (sans lib) */}
@@ -110,7 +151,7 @@ export const ProjectGalerie = (props: { gallery: GalleryData }) => {
                         width={1600}
                         height={1600}
                         sizes="auto"
-                        style={{ width: 'auto', height: 'auto' }}
+                        style={{width: 'auto', height: 'auto'}}
                         className="max-h-[90vh] max-w-[92vw] object-contain rounded-lg shadow-2xl"
                         onClick={(e) => e.stopPropagation()}
                     />
@@ -119,3 +160,5 @@ export const ProjectGalerie = (props: { gallery: GalleryData }) => {
         </section>
     );
 };
+
+
