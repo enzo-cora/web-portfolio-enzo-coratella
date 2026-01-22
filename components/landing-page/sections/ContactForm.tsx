@@ -2,10 +2,12 @@
 
 import Script from 'next/script';
 import {useEffect, useState} from 'react';
+import {useTheme} from "@/app/theme/ThemeProvider";
 
 const WEB3_FORM_PUBLIC_KEY = "10b6444c-0104-4b73-90d6-a1fb8b7aca91"
 
 export function ContactForm() {
+    const { theme } = useTheme();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -24,9 +26,11 @@ export function ContactForm() {
     }, [formData]);
 
     if (typeof window !== 'undefined') {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window as any).onCaptchaVerified = (token: string) => {
             setCaptchaToken(token);
         };
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window as any).onCaptchaExpired = () => {
             setCaptchaToken(null);
         };
@@ -132,7 +136,7 @@ export function ContactForm() {
                 data-captcha="true"
                 data-callback="onCaptchaVerified"
                 data-expired-callback="onCaptchaExpired"
-                data-theme="auto"
+                data-theme={theme === 'dark' ? 'dark' : 'light'}
                 style={{ display: isFormComplete ? 'block' : 'none' }}
                 aria-hidden={!isFormComplete}
             />

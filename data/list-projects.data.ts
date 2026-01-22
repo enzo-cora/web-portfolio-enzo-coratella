@@ -17,8 +17,8 @@ import {tictactripProjectData} from "@/data/projects/tictactrip.data";
 
 export const projectDataList: (StandardProjectData | ArticleProjectData)[] = [
     immobilierFullData,
-    whoAmIGameFullData,
     cryptoArbitrageFullData,
+    whoAmIGameFullData,
     npmComponentCreatorFullData,
     cryptoArbitrageV2FullData,
     pipelineModelDevOpsFullData,
