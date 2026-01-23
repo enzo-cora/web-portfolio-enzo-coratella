@@ -16,17 +16,7 @@ export function HeroSection() {
 
 	return (
 
-		<section className="min-h-screen relative overflow-hidden py-24 md:py-0">
-
-			<div className="mt-16">
-				<Image
-					src={enzo_photo}
-					alt="Profile Picture"
-					width={120}
-					height={120}
-					className="rounded-full mx-auto border-4 border-gray-50 dark:border-gray-700 shadow-lg"
-				/>
-			</div>
+		<section className="relative overflow-hidden py-24 md:py-0">
 
 			<div className="absolute inset-0">
 				<div
@@ -35,8 +25,19 @@ export function HeroSection() {
 				/>
 			</div>
 
-			<div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 pt-8 md:pt-0">
+			<div className="mt-20 relative z-10 flex flex-col items-center justify-center px-4 pt-8 md:pt-0">
 				<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8 md:mb-12">
+
+					<div className={"mb-10"}>
+						<Image
+							src={enzo_photo}
+							alt="Profile Picture"
+							width={120}
+							height={120}
+							className="rounded-full mx-auto border-4 border-gray-50 dark:border-gray-700 shadow-lg"
+						/>
+					</div>
+
 					<div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
 						<h1 className="text-4xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600">
 							Enzo Coratella
