@@ -14,8 +14,7 @@ export interface Feature {
 }
 
 
-
-export const ProjectFeatures = (props: {features: Feature[]}) => {
+export const ProjectFeatures = (props: { features: Feature[] }) => {
     const {theme} = useTheme();
 
     const {features} = props;
@@ -47,17 +46,18 @@ export const ProjectFeatures = (props: {features: Feature[]}) => {
     return (
         <section className="py-16 md:py-20 relative">
             <div className="container mx-auto px-4">
-                <h2 className={`text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center ${theme === 'dark' ? '' : 'text-gray-900'}`}> Features principales</h2>
+                <h2 className={`text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center ${theme === 'dark' ? '' : 'text-gray-900'}`}> Features
+                    principales</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
                     {features.map((feature, index) => (
                         <div
                             key={feature.name}
-                            className={`group rounded-xl sm:rounded-2xl p-1 ${
+                            className={`group rounded-xl sm:rounded-2xl p-1 h-full ${
                                 theme === 'dark' ? 'bg-gradient-to-b from-gray-800/50 to-gray-900/50' : 'bg-gradient-to-b from-gray-100 to-white shadow-lg'
                             }`}
                         >
                             <div
-                                className={`rounded-xl sm:rounded-2xl overflow-hidden p-4 sm:p-6 relative ${
+                                className={`h-full rounded-xl sm:rounded-2xl overflow-hidden p-4 sm:p-6 relative ${
                                     theme === 'dark' ? 'bg-gradient-to-b from-gray-900 to-gray-800' : 'bg-gradient-to-b from-white to-gray-50'
                                 }`}
                             >
@@ -101,22 +101,26 @@ export const ProjectFeatures = (props: {features: Feature[]}) => {
                                                 {feature.feature_type.toLowerCase()}
                                             </span>
                                         </div>
-                                        <p className={`mb-4 text-center sm:text-left ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{feature.description}</p>
 
-                                        {/* Technologies */}
-                                        <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-4">
-                                            {feature.tags.map((tech) => (
-                                                <span
-                                                    key={tech}
-                                                    className={`px-3 py-1 text-sm rounded-full border transition-colors whitespace-nowrap ${
-                                                        theme === 'dark'
-                                                            ? 'bg-gray-800 text-gray-400 border-gray-700/50 group-hover:border-gray-600/50 group-hover:text-gray-300'
-                                                            : 'bg-gray-100 text-gray-600 border border-gray-200 group-hover:border-gray-300 group-hover:text-gray-700'
-                                                    }`}
-                                                >
+                                        <div className="flex flex-col h-full justify-between">
+
+                                            <p className={`mb-4 text-center sm:text-left ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{feature.description}</p>
+
+                                            {/* Technologies */}
+                                            <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-4">
+                                                {feature.tags.map((tech) => (
+                                                    <span
+                                                        key={tech}
+                                                        className={`px-3 py-1 text-sm rounded-full border transition-colors whitespace-nowrap ${
+                                                            theme === 'dark'
+                                                                ? 'bg-gray-800 text-gray-400 border-gray-700/50 group-hover:border-gray-600/50 group-hover:text-gray-300'
+                                                                : 'bg-gray-100 text-gray-600 border border-gray-200 group-hover:border-gray-300 group-hover:text-gray-700'
+                                                        }`}
+                                                    >
 													{tech}
 												</span>
-                                            ))}
+                                                ))}
+                                            </div>
                                         </div>
 
                                     </div>
@@ -129,4 +133,3 @@ export const ProjectFeatures = (props: {features: Feature[]}) => {
         </section>
     );
 };
-
