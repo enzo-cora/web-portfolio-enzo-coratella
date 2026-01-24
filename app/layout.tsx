@@ -3,7 +3,6 @@ import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
 import {ThemeProvider} from '@/app/theme/ThemeProvider';
 import Script from 'next/script';
-import openGraphImage from '@/public/open-graph-img.png';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -52,7 +51,7 @@ export const metadata: Metadata = {
         siteName: 'Enzo CORATELLA - Software Engineer',
         images: [
             {
-                url: openGraphImage.src,
+                url: `${process.env.NEXT_PUBLIC_BASE_PATH}/open-graph-img.png`,
                 width: 1200,
                 height: 630,
                 alt: 'Enzo CORATELLA - Senior Software Engineer (Backend / Node.js)',
