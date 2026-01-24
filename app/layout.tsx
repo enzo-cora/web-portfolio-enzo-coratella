@@ -3,6 +3,7 @@ import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
 import {ThemeProvider} from '@/app/theme/ThemeProvider';
 import Script from 'next/script';
+import openGraphImage from '@/public/open-graph-img.png';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -14,17 +15,19 @@ const geistMono = Geist_Mono({
     subsets: ['latin'],
 });
 
+
 export const metadata: Metadata = {
-    title: 'Enzo CORATELLA - Senior Software Engineer (Backend / Fullstack Node.js)',
+    metadataBase: process.env.NEXT_PUBLIC_SITE_ORIGIN ? new URL(process.env.NEXT_PUBLIC_SITE_ORIGIN) : undefined,
+    title: 'Enzo CORATELLA - Senior Software Engineer (NodeJs)',
     description:
-        "Senior Software Engineer orienté backend (Node.js/TypeScript) — j’aide entreprises & startups à concevoir des systèmes robustes, scalables et maintainables : architecture (Clean Architecture, DDD, CQRS), APIs, performance, sécurité, testing & CI/CD.",
+        "Senior Software Engineer (NodeJs) orienté Backend / Architecture / Fullstack  — j’aide entreprises & startups à concevoir des systèmes robustes, scalables et maintainables : architecture (Clean Architecture, DDD, CQRS), APIs, performance, sécurité, testing & CI/CD.",
     keywords: [
         'Senior Software Engineer',
-        'Backend Developer',
-        'Fullstack Developer',
-        'Node.js',
+        'Backend',
+        'Architecture',
+        'Fullstack',
+        'NodeJs',
         'TypeScript',
-        'Software Architecture',
         'Clean Architecture',
         'DDD',
         'Domain-Driven Design',
@@ -45,16 +48,16 @@ export const metadata: Metadata = {
     authors: [{name: 'Enzo CORATELLA'}],
     creator: 'Enzo CORATELLA',
     openGraph: {
-        title: 'Enzo CORATELLA - Senior Software Engineer (Backend / Node.js)',
+        title: 'Enzo CORATELLA - Senior Software Engineer (NodeJs)',
         description:
-            "Senior Software Engineer orienté backend (Node.js/TypeScript). Architecture logicielle (Clean Architecture, DDD, CQRS), APIs, performance & sécurité, testing, CI/CD & Cloud.",
+            "Senior Software Engineer orienté backend / fullstack (Node.js). Architecture logicielle (Clean Architecture, DDD, CQRS), APIs, performance & sécurité, testing, CI/CD & Cloud.",
         siteName: 'Enzo CORATELLA - Software Engineer',
         images: [
             {
                 url: `${process.env.NEXT_PUBLIC_BASE_PATH}/open-graph-img.png`,
-                width: 1200,
-                height: 630,
-                alt: 'Enzo CORATELLA - Senior Software Engineer (Backend / Node.js)',
+                width: openGraphImage.width,
+                height: openGraphImage.height,
+                alt: 'Enzo CORATELLA - Senior Software Engineer (NodeJs)',
             },
         ],
         locale: 'en_US',
