@@ -1,7 +1,6 @@
 import {ArrowPathIcon, DocumentTextIcon, UserGroupIcon} from "@heroicons/react/24/outline";
 import {ArrowRightLeftIcon, CoinsIcon, CombineIcon, DatabaseBackupIcon, FastForwardIcon} from "lucide-react";
 import {Feature} from "@/components/project-page/sections/ProjectFeatures";
-import searchLandingPage from "@/public/projects-gallery/app-immobilier/search-landing-page.webp";
 import {GalleryData} from "@/components/project-page/sections/ProjectGalerie";
 import gitlabLogo from "@/public/svg/gitlab-logo-500-rgb.svg"
 import {ProjectPresentationData} from "@/components/project-page/sections/ProjectPresentationText";
@@ -189,7 +188,7 @@ const features: Feature[] = [
 ];
 
 /* ----------------------- [PROJECT PREVIEW] SECTION -----------------------------*/
-const projectMainPicture = searchLandingPage
+const projectMainPicture = transaction2Image
 
 const projectPreview: ProjectPreview = {
     slug: slug,
