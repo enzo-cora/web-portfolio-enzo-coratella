@@ -10,7 +10,6 @@ import {ProjectStackData} from "@/components/project-page/sections/ProjectStackS
 import {ProjectHeroSectionData} from "@/components/project-page/sections/ProjectHeroSection";
 import {StandardProjectData} from "@/components/project-page/types";
 import {Slugs} from "@/data/slugs";
-import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/project-preview.type";
 import {BoltIcon, BuildingLibraryIcon, MagnifyingGlassIcon} from "@heroicons/react/24/solid";
 import React from "react";
 import analyseBoardImage from "@/public/projects-gallery/crypto-arbitrage/arbitrage-analyse.webp";
@@ -19,6 +18,7 @@ import popupsArbitrageImages from "@/public/projects-gallery/crypto-arbitrage/ar
 import mobileViewImage from "@/public/projects-gallery/crypto-arbitrage/arbitrage-mobile-view.webp";
 import mainDashboardImage from "@/public/projects-gallery/crypto-arbitrage/arbitrage-main-dashboard.png";
 import transactionImage from "@/public/projects-gallery/crypto-arbitrage/arbitrage-transactions-2.webp";
+import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/components/ProjectCardPreview.js";
 /* ----------------------- [HERO DATA] SECTION -----------------------------*/
 
 const slug = Slugs.cryptoArbitrageV2

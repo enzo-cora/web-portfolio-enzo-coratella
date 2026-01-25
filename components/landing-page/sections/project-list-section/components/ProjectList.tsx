@@ -2,8 +2,10 @@
 
 import {useCallback, useEffect, useState} from 'react';
 import useEmblaCarousel from "embla-carousel-react";
-import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/project-preview.type";
-import {ProjectCardPreview} from "@/components/landing-page/sections/project-list-section/ProjectCardPreview";
+import {
+    ProjectCardPreview,
+    ProjectPreview
+} from "@/components/landing-page/sections/project-list-section/components/ProjectCardPreview";
 import {technicalTags, TechnicalTags} from "@/components/project-page/types";
 
 

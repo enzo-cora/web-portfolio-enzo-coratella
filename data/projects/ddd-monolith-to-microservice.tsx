@@ -5,9 +5,9 @@ import {ProjectPresentationData} from "@/components/project-page/sections/Projec
 import {ProjectHeroSectionData} from "@/components/project-page/sections/ProjectHeroSection";
 import {ArticleProjectData} from "@/components/project-page/types";
 import {Slugs} from "@/data/slugs";
-import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/project-preview.type";
 import React from "react";
 import {NewspaperIcon} from "@heroicons/react/24/solid";
+import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/components/ProjectCardPreview.js";
 /* ----------------------- [HERO DATA] SECTION -----------------------------*/
 
 const slug = Slugs.dddMonolithToMicroservice

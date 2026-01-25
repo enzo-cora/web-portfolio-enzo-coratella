@@ -17,24 +17,14 @@ export type PinnedProject = {
 }
 
 
-export function PinnedProjectsSection(props: { pinnedProjects: PinnedProject[] }) {
+export function PinnedProjects(props: { pinnedProjects: PinnedProject[] }) {
 
     const paragraphTitleColors = ['text-blue-600 dark:text-blue-400', 'text-purple-600 dark:text-purple-400', 'text-teal-600 dark:text-teal-400']
     const {pinnedProjects} = props
 
 
     return (
-        <section className="py-20 px-4">
-
-            <motion.h2
-                initial={{opacity: 0}}
-                whileInView={{opacity: 1}}
-                viewport={{once: true}}
-                className="text-3xl font-bold mb-16 text-center text-gray-900 dark:text-white"
-            >
-                Mes projets
-            </motion.h2>
-
+        <section className="px-4">
 
             {!pinnedProjects.length ? null : <div className="max-w-6xl mx-auto">
 
@@ -44,7 +34,7 @@ export function PinnedProjectsSection(props: { pinnedProjects: PinnedProject[] }
                     viewport={{once: true}}
                     className="text-xl font-bold mb-16 text-left text-gray-600 dark:text-gray-200"
                 >
-                    A la une:
+                    Épinglés:
                 </motion.h3>
 
 

@@ -11,8 +11,8 @@ import {ProjectStackData} from "@/components/project-page/sections/ProjectStackS
 import {ProjectHeroSectionData} from "@/components/project-page/sections/ProjectHeroSection";
 import {StandardProjectData} from "@/components/project-page/types";
 import {Slugs} from "@/data/slugs";
-import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/project-preview.type";
 import React from "react";
+import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/components/ProjectCardPreview.js";
 
 /* ----------------------- [HERO DATA] SECTION -----------------------------*/
 

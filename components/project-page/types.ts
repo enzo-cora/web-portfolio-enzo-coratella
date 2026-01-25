@@ -4,8 +4,9 @@ import {ProjectPresentationData} from "@/components/project-page/sections/Projec
 import {ProjectStackData} from "@/components/project-page/sections/ProjectStackSection";
 import {Feature} from "@/components/project-page/sections/ProjectFeatures";
 import {TechnicalChallengeData} from "@/components/project-page/sections/ProjectTechnicalChallenges";
-import {PinnedProject} from "@/components/landing-page/sections/PinnedProjectsSection";
-import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/project-preview.type";
+import {PinnedProject} from "@/components/landing-page/sections/project-list-section/components/PinnedProjects";
+
+import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/components/ProjectCardPreview";
 
 
 export const technicalTags = ['Backend', 'Fullstack', 'Architecture', 'DevOps'] as const

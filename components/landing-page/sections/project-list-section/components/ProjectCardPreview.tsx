@@ -3,9 +3,27 @@
 import {motion} from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import {ProjectPreview} from "@/components/landing-page/sections/project-list-section/project-preview.type";
 import {useRouter} from "next/navigation";
+import {Slugs} from "@/data/slugs";
+import {StaticImageData} from "next/image";
+import {TechnicalTags} from "@/components/project-page/types";
 
+
+export type ProjectPreview = {
+  slug: Slugs
+  title: string
+  description: string
+  image: StaticImageData
+  technicalTag: TechnicalTags[],
+  view_project_button: {
+    label: string,
+    link: string
+  },
+  button_2?: {
+    label: string,
+    link: string
+  },
+}
 
 export function ProjectCardPreview(props: { project: ProjectPreview }) {
 
