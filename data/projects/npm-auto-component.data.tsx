@@ -137,15 +137,15 @@ const presentationData: ProjectPresentationData = {
 
 const projectStackData: ProjectStackData = {
     core_stack: [
-        {name: 'typescript', level: 90, description: 'langage'},
-        {name: 'nodejs', level: 85, description: 'runtime'},
-        {name: 'commanderjs', level: 75, description: 'cli'},
+        {name: 'typescript', level: 100, description: 'langage'},
+        {name: 'nodejs', level: 100, description: 'runtime'},
+        {name: 'commanderjs', level: 100, description: 'cli'},
     ],
     specialized_stack: [
-        {name: 'template parsing', level: 85},
-        {name: 'placeholder engine', level: 85},
+        {name: 'template parsing', level: 100},
+        {name: 'placeholder engine', level: 100},
         {name: 'filesystem operations', level: 100},
-        {name: 'npm', level: 70},
+        {name: 'npm', level: 100},
     ],
 }
 

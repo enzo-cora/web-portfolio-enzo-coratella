@@ -146,22 +146,22 @@ const presentationData: ProjectPresentationData = {
 
 const projectStackData: ProjectStackData = {
     core_stack: [
-        {name: 'TypeScript', level: 90, description: 'language'},
-        {name: 'MongoDB', level: 80, description: 'database'},
-        {name: 'Angular', level: 70, description: 'admin UI'},
-        {name: 'Docker', level: 85, description: 'containers'},
-        {name: 'AWS', level: 70, description: 'ECS'},
-        {name: 'WebSocket', level: 85, description: 'trading'},
+        {name: 'TypeScript', level: 100, description: 'language'},
+        {name: 'MongoDB', level: 100, description: 'database'},
+        {name: 'Angular', level: 100, description: 'admin UI'},
+        {name: 'Docker', level: 100, description: 'containers'},
+        {name: 'AWS', level: 100, description: 'ECS'},
+        {name: 'WebSocket', level: 100, description: 'trading'},
     ],
     specialized_stack: [
-        {name: 'Express.js', level: 80},
-        {name: 'JWT ', level: 10},
+        {name: 'Express.js', level: 100},
+        {name: 'JWT ', level: 100},
         {name: 'CI/CD', level: 100},
-        {name: 'Microservices', level: 95},
+        {name: 'Microservices', level: 100},
         {name: 'CloudFormation', level: 100},
-        {name: 'Nginx / HAProxy', level: 60},
-        {name: 'AWS Auto scaling', level: 25},
-        {name: 'Chart.js', level: 55},
+        {name: 'Nginx / HAProxy', level: 100},
+        {name: 'AWS Auto scaling', level: 100},
+        {name: 'Chart.js', level: 100},
     ],
 }
 

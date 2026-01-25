@@ -128,21 +128,21 @@ const presentationData: ProjectPresentationData = {
 
 const projectStackData: ProjectStackData = {
     core_stack: [
-        {name: 'Nodejs', level: 95, description: "Main language"},
-        {name: 'PostgresSql', level: 90, description: "Database"},
+        {name: 'Nodejs', level: 100, description: "Main language"},
+        {name: 'PostgresSql', level: 100, description: "Database"},
         {name: 'Angular', level: 80, description: "Frontend"},
-        {name: 'Flutter', level: 85, description: "Mobile"},
-        {name: 'React', level: 85, description: "Refonte"},
-        {name: 'AWS', level: 80, description: "Cloud"},
+        {name: 'Flutter', level: 100, description: "Mobile"},
+        {name: 'React', level: 100, description: "Refonte"},
+        {name: 'AWS', level: 100, description: "Cloud"},
     ],
     specialized_stack: [
         {name: 'Rest API', level: 100},
-        {name: 'UI/UX', level: 30},
-        {name: 'Clean architecture', level: 30},
-        {name: 'AWS', level: 90},
-        {name: 'Terraform', level: 20},
-        {name: 'ECS', level: 90},
-        {name: 'Docker', level: 80},
+        {name: 'UI/UX', level: 100},
+        {name: 'Clean architecture', level: 100},
+        {name: 'AWS', level: 100},
+        {name: 'Terraform', level: 100},
+        {name: 'ECS', level: 100},
+        {name: 'Docker', level: 100},
     ],
 }
 

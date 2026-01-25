@@ -133,17 +133,17 @@ const presentationData: ProjectPresentationData = {
 const projectStackData: ProjectStackData = {
     core_stack: [
         {name: 'TypeScript', level: 100, description: 'typed backend'},
-        {name: 'Node.js', level: 85, description: 'runtime'},
-        {name: 'MongoDB', level: 95, description: 'database'},
-        {name: 'RabbitMQ', level: 85, description: 'message broker'},
+        {name: 'Node.js', level: 100, description: 'runtime'},
+        {name: 'MongoDB', level: 100, description: 'database'},
+        {name: 'RabbitMQ', level: 100, description: 'message broker'},
     ],
     specialized_stack: [
-        {name: 'WebSocket', level: 80},
-        {name: 'REST API', level: 75},
-        {name: 'JWT / Sessions', level: 65},
-        {name: 'EventBridge (cron)', level: 65},
-        {name: 'Clean Architecture', level: 75},
-        {name: 'Event-driven', level: 80},
+        {name: 'WebSocket', level: 100},
+        {name: 'REST API', level: 100},
+        {name: 'JWT / Sessions', level: 100},
+        {name: 'EventBridge (cron)', level: 100},
+        {name: 'Clean Architecture', level: 100},
+        {name: 'Event-driven', level: 100},
     ],
 }
 

@@ -133,17 +133,17 @@ const presentationData: ProjectPresentationData = {
 
 const projectStackData: ProjectStackData = {
     core_stack: [
-        {name: 'GitLab CI', level: 90, description: "pipelines"},
-        {name: 'Docker', level: 85, description: "build"},
-        {name: 'Terraform', level: 80, description: "IaC"},
-        {name: 'AWS', level: 70, description: "deploy"},
+        {name: 'GitLab CI', level: 100, description: "pipelines"},
+        {name: 'Docker', level: 100, description: "build"},
+        {name: 'Terraform', level: 100, description: "IaC"},
+        {name: 'AWS', level: 100, description: "deploy"},
     ],
     specialized_stack: [
-        {name: 'semantic-release', level: 75},
-        {name: 'Docker Compose', level: 70},
-        {name: 'GitLab Flow', level: 70},
-        {name: 'YAML', level: 85},
-        {name: 'Bash Scripts', level: 20},
+        {name: 'semantic-release', level: 100},
+        {name: 'Docker Compose', level: 100},
+        {name: 'GitLab Flow', level: 100},
+        {name: 'YAML', level: 100},
+        {name: 'Bash Scripts', level: 100},
     ],
 }
 

@@ -109,16 +109,16 @@ const presentationData: ProjectPresentationData = {
 
 const projectStackData: ProjectStackData = {
     core_stack: [
-        {name: 'Ansible', level: 90, description: "IaC"},
-        {name: 'Linux', level: 85, description: "sysadmin"},
-        {name: 'GitLab Runner', level: 80, description: "CI runner"},
-        {name: 'YAML', level: 75, description: "config"},
+        {name: 'Ansible', level: 100, description: "IaC"},
+        {name: 'Linux', level: 100, description: "sysadmin"},
+        {name: 'GitLab Runner', level: 100, description: "CI runner"},
+        {name: 'YAML', level: 100, description: "config"},
     ],
     specialized_stack: [
-        {name: 'Roles', level: 90},
-        {name: 'Idempotency', level: 85},
-        {name: 'Inventories & Vars', level: 80},
-        {name: 'Local provisioning', level: 70},
+        {name: 'Roles', level: 100},
+        {name: 'Idempotency', level: 100},
+        {name: 'Inventories & Vars', level: 100},
+        {name: 'Local provisioning', level: 100},
     ],
 }
 

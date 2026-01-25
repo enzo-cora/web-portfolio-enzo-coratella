@@ -149,16 +149,16 @@ const presentationData: ProjectPresentationData = {
 
 const projectStackData: ProjectStackData = {
   core_stack: [
-    {name: 'TypeScript', level: 90, description: "Language"},
-    {name: 'React', level: 85, description: "Frontend"},
-    {name: 'Socket.IO', level: 80, description: "WebSocket"},
-    {name: 'MongoDb', level: 75, description: "Database"},
+    {name: 'TypeScript', level: 100, description: "Language"},
+    {name: 'React', level: 100, description: "Frontend"},
+    {name: 'Socket.IO', level: 100, description: "WebSocket"},
+    {name: 'MongoDb', level: 100, description: "Database"},
   ],
   specialized_stack: [
-    {name: 'Architecture temps réel', level: 80},
-    {name: 'Docker', level: 75},
-    {name: 'CI/CD (GitLab)', level: 70},
-    {name: 'Terraform', level: 60},
+    {name: 'Architecture temps réel', level: 100},
+    {name: 'Docker', level: 100},
+    {name: 'CI/CD (GitLab)', level: 100},
+    {name: 'Terraform', level: 100},
   ],
 }
 

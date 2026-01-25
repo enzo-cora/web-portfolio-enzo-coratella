@@ -117,32 +117,32 @@ const projectStackData: ProjectStackData = {
     core_stack: [
         {
             name: "AWS CloudFormation",
-            level: 95,
+            level: 100,
             description: "IaC",
         },
         {
             name: "AWS ECS",
-            level: 85,
+            level: 100,
             description: "Compute",
         },
         {
             name: "AWS VPC",
-            level: 80,
+            level: 100,
             description: "Réseau",
         },
         {
             name: "AWS ALB",
-            level: 75,
+            level: 100,
             description: "Load balancer",
         },
     ],
     specialized_stack: [
-        {name: "EC2", level: 60},
-        {name: "Auto Scaling", level: 70},
-        {name: "CloudWatch", level: 70},
-        {name: "IAM Roles", level: 65},
-        {name: "Security Groups", level: 65},
-        {name: "Subnets", level: 60},
+        {name: "EC2", level: 100},
+        {name: "Auto Scaling", level: 100},
+        {name: "CloudWatch", level: 100},
+        {name: "IAM Roles", level: 100},
+        {name: "Security Groups", level: 100},
+        {name: "Subnets", level: 100},
     ],
 };
 
