@@ -15,7 +15,7 @@ type SkillGroup = {
 const skills: SkillGroup[] = [
     {
         category: 'Languages',
-        items: ['TypeScript', 'Javascript', 'C'],
+        items: ['TypeScript', 'Javascript', 'Go', 'C','PHP', 'C#'],
         icon: CodeBracketIcon,
     },
     {
